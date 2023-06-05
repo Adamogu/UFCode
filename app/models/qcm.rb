@@ -1,0 +1,2 @@
+class Qcm < ApplicationRecord
+end

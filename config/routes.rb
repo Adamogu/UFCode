@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#home"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  root to: "page#home"
+  # resources :games, only: [:create, :index, :show, :destroy] do
+  #   resources :user_games, only: [:create]
+  #   resources :game_qcms, only: [:create]
+  # end
+  # resources :user_games, only: [:show, :update]
+  # get "choose_language", to: "qcms#choose_language", as: :choose_language
+  # get "choose_level", to: "qcms#choose_language", as: :choose_language
 end
