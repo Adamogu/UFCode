@@ -10,9 +10,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_05_153038) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_05_160050) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "game_qcms", force: :cascade do |t|
+    t.bigint "game_id", null: false
+    t.bigint "qcm_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_game_qcms_on_game_id"
+    t.index ["qcm_id"], name: "index_game_qcms_on_qcm_id"
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "qcms", force: :cascade do |t|
+    t.text "question"
+    t.string "answer_one"
+    t.string "answer_two"
+    t.string "answer_true"
+    t.string "language"
+    t.integer "level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_games", force: :cascade do |t|
+    t.integer "score"
+    t.bigint "user_id", null: false
+    t.bigint "game_id", null: false
+    t.integer "step"
+    t.string "avatar"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_user_games_on_game_id"
+    t.index ["user_id"], name: "index_user_games_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +64,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_05_153038) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "game_qcms", "games"
+  add_foreign_key "game_qcms", "qcms"
+  add_foreign_key "user_games", "games"
+  add_foreign_key "user_games", "users"
 end
