@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'gameqcms/create'
+  get 'usergames/create'
+  get 'usergames/show'
+  get 'usergames/update'
+  get 'games/create'
+  get 'games/index'
+  get 'games/show'
+  get 'games/destroy'
   devise_for :users
 
   root to: "page#home"
