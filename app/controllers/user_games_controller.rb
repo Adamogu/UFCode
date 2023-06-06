@@ -9,7 +9,7 @@ class UserGamesController < ApplicationController
     @user_game.update(user_game_params)
 
     if @user_game.save
-      redirect_to choose_language_path
+      redirect_to game_choose_language(@user_game.game)
     end
   end
 
