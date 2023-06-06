@@ -13,7 +13,7 @@ class GamesController < ApplicationController
   end
 
   def choose_level
-    raise
+    # raise
     # je stocke en session le language qui est envoyé dans les params
     # ça va ouvrir la vue choose_level.html.erb
   end
