@@ -3,7 +3,7 @@ class GamesController < ApplicationController
     @game = Game.new
     @user_game = UserGame.new(user: current_user, game: @game)
     if @user_game.save
-      redirect_to user_game_path(@game)
+      redirect_to user_game_path(@user_game)
     else
 
     end
@@ -13,9 +13,11 @@ class GamesController < ApplicationController
   end
 
   def choose_level
-    # raise
+    session[:language] = params[:language]
+    session[:level] = params[:level]
     # je stocke en session le language qui est envoyé dans les params
     # ça va ouvrir la vue choose_level.html.erb
+    redirect_to game_path(@game)
   end
 
   def index
