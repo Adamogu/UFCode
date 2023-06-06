@@ -1,6 +1,11 @@
-<h1>UFCode</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<div class="buttons-container">
-  <%= link_to "Create", games_path(@game), data: {turbo_method: :post}, class: "button create-button" %>
-  <%= link_to "Join", games_path, class: "button join-button" %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('Background-UFCode.png') %>); height: 100vh; background-size: cover;">
+  <nav class="navbar">
+  </nav>
+  <div class="container">
+    <h1 class="title">UFCode</h1>
+    <div class="buttons-container text-center">
+      <%= link_to "Create", games_path(@game), data: { turbo_method: :post }, class: "button create-button" %>
+      <%= link_to "Join", games_path, class: "button join-button" %>
+    </div>
+  </div>
 </div>
