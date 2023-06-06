@@ -1,5 +1,5 @@
 class GameQcmsController < ApplicationController
   def create
-    raise
+    # raise
   end
 end

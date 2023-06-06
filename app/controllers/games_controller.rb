@@ -15,7 +15,6 @@ class GamesController < ApplicationController
   def choose_level
     session[:language] = params[:language]
     session[:level] = params[:level]
-    raise
     # je stocke en session le language qui est envoyé dans les params
     # ça va ouvrir la vue choose_level.html.erb
     redirect_to game_path(@game)
