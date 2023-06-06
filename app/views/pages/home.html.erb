@@ -1,2 +1,6 @@
-<h1>Pages#home</h1>
+<h1>UFCode</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+<div class="buttons-container">
+  <%= link_to "Create", games_path(@game), data: {turbo_method: :post}, class: "button create-button" %>
+  <%= link_to "Join", games_path, class: "button join-button" %>
+</div>

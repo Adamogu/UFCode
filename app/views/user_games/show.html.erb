@@ -1,2 +1,7 @@
-<h1>UserGames#show</h1>
+<h1>Choose a Fighter</h1>
 <p>Find me in app/views/user_games/show.html.erb</p>
+
+<%= form_with model: @user_game, url: user_game_path(@user_game), method: :patch do |f| %>
+  <%= f.select :avatar, UserGame::AVATAR_URL %>
+  <%= f.submit 'Select', class: "submit-button" %>
+<% end %>
