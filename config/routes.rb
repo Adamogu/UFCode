@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'game_qcms/create'
+  get 'user_games/create'
+  get 'user_games/update'
+  get 'user_games/show'
   get 'gameqcms/create'
   get 'usergames/create'
   get 'usergames/show'

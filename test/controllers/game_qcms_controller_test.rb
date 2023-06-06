@@ -1,8 +1,8 @@
 require "test_helper"
 
-class GameqcmsControllerTest < ActionDispatch::IntegrationTest
+class GameQcmsControllerTest < ActionDispatch::IntegrationTest
   test "should get create" do
-    get gameqcms_create_url
+    get game_qcms_create_url
     assert_response :success
   end
 end
