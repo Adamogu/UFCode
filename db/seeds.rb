@@ -17,4 +17,7 @@ user2 = User.create!(
   password: '123456'
 )
 
-# Autres seed data...
+user3 = User.create!(
+  email: 'stanislas.zablocki@gmail.com',
+  password: '123456'
+)
