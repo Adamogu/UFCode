@@ -2,21 +2,12 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
 }
 
 .nav-link {
   font-family: "Press Start 2P", cursive;
 }
 
-.banner h1 {
-  margin: 15px;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: bold;
-  font-family: 'Press Start 2P', cursive;
-}
 
 .banner p {
   font-size: 20px;
@@ -46,9 +37,19 @@
   color: white;
 }
 
-.buttons-container {
-  text-align: center;
+.buttons-container a {
+  background-color: transparent;
+  color: white;
 }
+
+.buttons-container {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+height: calc(100vh - 56px);
+}
+
 
 .create-button, .join-button {
   border-radius: 7px;
@@ -59,7 +60,7 @@
   color: #000;
   border: 2px solid #000;
   text-decoration: none;
-  display: inline-block;
+  display: block;
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
@@ -67,4 +68,8 @@
   background-color: #000;
   color: #fff;
   border-color: #fff;
+}
+
+.nav-link {
+  color: white;
 }
