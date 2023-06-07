@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
   resources :user_games, only: [:show, :update] do
     get "answer", to: "user_games#answer"
+
   end
   # patch '/user_games/:id', to: 'user_games#update', as: 'update_user_games'
 end

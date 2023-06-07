@@ -15,7 +15,7 @@ class GamesController < ApplicationController
 
   def choose_level
     @game = Game.find(params[:game_id])
-    @game.update(language: params[:languages])
+    @game.update(language: params[:qcm][:languages])
   end
 
   def index
