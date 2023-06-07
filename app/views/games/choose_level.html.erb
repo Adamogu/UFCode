@@ -1,6 +1,6 @@
 <h1>choisi le niveau de difficultée</h1>
 
 <%= form_with url: game_path(), method: :patch do |f| %>
-  <%= f.select :levels, Qcm::LEVEL %>
+  <%= f.select :levels, Qcm::LEVELS %>
   <%= f.submit 'Select', class: "submit-button" %>
 <% end %>
