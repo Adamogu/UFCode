@@ -1,6 +1,6 @@
 <h1>choisi le language</h1>
 
-<%= form_with url: choose_level_path, method: :get do |f| %>
+<%= form_with url: game_choose_level_path, method: :get do |f| %>
   <%= f.select :languages, Qcm::LANGUAGES %>
   <%= f.submit 'Select', class: "submit-button" %>
 <% end %>
