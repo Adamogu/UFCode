@@ -4,11 +4,16 @@
       <h1 class="choose-level-title">Choose a level</h1>
 
 
-      <%= form_with url: game_game_qcms_path(@game), method: :post, html: { class: "choose-level-form centered-form" } do |f| %>
-        <%= f.select :levels, Qcm::LEVELS %>
+      <%= simple_form_for :qcm, url: game_game_qcms_path(@game), method: :post do |f| %>
+        <%= f.input :level,
+            as: :radio_buttons,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector'},
+            collection: Qcm::LEVELS %>
         <%= f.submit 'Select', class: "submit-button" %>
       <% end %>
     </div>
   </div>
 </div>
-
