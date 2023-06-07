@@ -1,6 +1,12 @@
-<h1>choisi le niveau de difficultée</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('Background-UFCode.png') %>); height: 100vh; background-size: cover;">
+  <div class="container">
+    <div class="choose-level-form-container">
+      <h1 class="choose-level-title">Choose a level</h1>
 
-<%= form_with url: game_game_qcms_path(@game), method: :post do |f| %>
-  <%= f.select :levels, Qcm::LEVELS %>
-  <%= f.submit 'Select', class: "submit-button" %>
-<% end %>
+      <%= form_with url: game_game_qcms_path(@game), method: :post, html: { class: "choose-level-form centered-form" } do |f| %>
+        <%= f.select :levels, Qcm::LEVELS %>
+        <%= f.submit 'Select', class: "submit-button" %>
+      <% end %>
+    </div>
+  </div>
+</div>
