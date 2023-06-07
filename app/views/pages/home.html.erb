@@ -2,10 +2,11 @@
   <nav class="navbar">
   </nav>
   <div class="container">
-    <h1 class="title">UFCode</h1>
     <div class="buttons-container text-center">
-      <%= link_to "Create", games_path(@game), data: { turbo_method: :post }, class: "button create-button" %>
-      <%= link_to "Join", games_path, class: "button join-button" %>
+      <div>
+        <%= link_to "Start Game", games_path(@game), data: { turbo_method: :post }, class: "button create-button" %>
+        <%= link_to "Join Game", games_path, class: "button join-button" %>
+      </div>
     </div>
   </div>
 </div>

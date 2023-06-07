@@ -17,6 +17,11 @@ class UserGamesController < ApplicationController
     @user_game = UserGame.find(params[:id])
   end
 
+  def answer
+    # update the user_game score
+    # update the step of the user_game
+  end
+
   private
 
   def user_game_params

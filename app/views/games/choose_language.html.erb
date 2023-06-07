@@ -1,7 +1,6 @@
 <h1>choisi le language</h1>
 
-<%= simpl_form_for url: game_choose_level_path(@game), method: :get do |f| %>
-
+<%= simple_form_for url: game_choose_level_path(@game), method: :get do |f| %>
   <%= f.input :languages,
             as: :radio_buttons,
             collection_wrapper_tag: 'div',

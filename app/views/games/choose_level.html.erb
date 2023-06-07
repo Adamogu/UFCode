@@ -1,6 +1,6 @@
 <h1>choisi le niveau de difficultée</h1>
 
-<%= simple_form_for game_path() do |f| %>
+<%= simple_form_for url: game_game_qcms_path(@game), method: :post do |f| %>
   <%= f.input :avatar,
             as: :radio_buttons,
             collection_wrapper_tag: 'div',
