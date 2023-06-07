@@ -1,1 +1,70 @@
 // Specific CSS for your home-page
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+
+.nav-link {
+  font-family: "Press Start 2P", cursive;
+}
+
+.banner h1 {
+  margin: 15px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+
+.title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 20px;
+}
+
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+}
+
+.white-link {
+  color: white;
+}
+
+.buttons-container {
+  text-align: center;
+}
+
+.create-button, .join-button {
+  border-radius: 7px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+  color: #000;
+  border: 2px solid #000;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.create-button:hover, .join-button:hover {
+  background-color: #000;
+  color: #fff;
+  border-color: #fff;
+}
