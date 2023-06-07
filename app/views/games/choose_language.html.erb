@@ -3,6 +3,7 @@
     <div class="choose-language-form-container">
       <h1 class="choose-language-title">Choose your language</h1>
 
+
       <%= form_with url: game_choose_level_path(@game), method: :get, html: { class: "choose-language-form centered-form" } do |f| %>
         <%= f.select :languages, Qcm::LANGUAGES %>
         <%= f.submit 'Select', class: "choose-language-submit-button submit-button" %>
