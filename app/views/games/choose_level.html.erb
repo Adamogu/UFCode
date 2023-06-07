@@ -3,6 +3,7 @@
     <div class="choose-level-form-container">
       <h1 class="choose-level-title">Choose a level</h1>
 
+
       <%= form_with url: game_game_qcms_path(@game), method: :post, html: { class: "choose-level-form centered-form" } do |f| %>
         <%= f.select :levels, Qcm::LEVELS %>
         <%= f.submit 'Select', class: "submit-button" %>
@@ -10,3 +11,4 @@
     </div>
   </div>
 </div>
+
