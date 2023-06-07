@@ -1,12 +1,13 @@
 <h1>choisi le language</h1>
 
-<%= simple_form_for url: game_choose_level_path(@game), method: :get do |f| %>
+<%= simple_form_for :qcm, url: game_choose_level_path(@game), method: :get do |f| %>
   <%= f.input :languages,
             as: :radio_buttons,
+            label_method: lambda { |cat| render 'languages', cat: cat },
+            input_html: {class: 'category-selector'},
+            item_wrapper_class: 'category-item',
             collection_wrapper_tag: 'div',
             collection_wrapper_class: 'category-wrapper',
-            item_wrapper_class: 'category-item',
-            input_html: {class: 'category-selector'},
             collection: Qcm::LANGUAGES %>
   <%= f.submit 'Select', class: "submit-button" %>
 <% end %>

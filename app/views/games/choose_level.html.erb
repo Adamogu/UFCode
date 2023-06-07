@@ -1,7 +1,7 @@
 <h1>choisi le niveau de difficultée</h1>
 
-<%= simple_form_for url: game_game_qcms_path(@game), method: :post do |f| %>
-  <%= f.input :avatar,
+<%= simple_form_for :qcm, url: game_game_qcms_path(@game), method: :post do |f| %>
+  <%= f.input :level,
             as: :radio_buttons,
             collection_wrapper_tag: 'div',
             collection_wrapper_class: 'category-wrapper',

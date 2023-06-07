@@ -2,9 +2,10 @@
 
 <%= simple_form_for @user_game do |f| %>
   <%= f.input :avatar,
-                  as: :radio_buttons,
-                  input_html: { class: "tag-selector" },
-                  item_wrapper_class: 'tag-item',
-                  collection: UserGame::AVATAR_URL %>
+            as: :radio_buttons,
+            label_method: lambda { |photo| render 'avatar', photo: photo },
+            input_html: { class: "tag-selector" },
+            item_wrapper_class: 'tag-item',
+            collection: UserGame::AVATAR_URL %>
   <%= f.submit 'Select', class: "submit-button" %>
 <% end %>
