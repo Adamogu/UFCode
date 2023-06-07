@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.user-games-title {
+  color: white;
+  font-family: "Press Start 2P", cursive;
+  margin-top: -270px;
+}
