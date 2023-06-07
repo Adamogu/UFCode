@@ -1,11 +1,18 @@
-<h1>Choose a Fighter</h1>
 
-<%= simple_form_for @user_game do |f| %>
-  <%= f.input :avatar,
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('Background-UFCode.png') %>); height: 100vh; background-size: cover;">
+  <div class="container">
+    <div class="user-games-form-container">
+      <h1 class="user-games-title">Choose a Fighter</h1>
+
+      <%= simple_form_for @user_game do |f| %>
+        <%= f.input :avatar,
             as: :radio_buttons,
             label_method: lambda { |photo| render 'avatar', photo: photo },
             input_html: { class: "tag-selector" },
             item_wrapper_class: 'tag-item',
             collection: UserGame::AVATAR_URL %>
-  <%= f.submit 'Select', class: "submit-button" %>
-<% end %>
+        <%= f.submit 'Select', class: "submit-button" %>
+      <% end %>
+    </div>
+  </div>
+</div>

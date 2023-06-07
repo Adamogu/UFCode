@@ -18,3 +18,20 @@
     </li>
   <% end %>
 </ul>
+
+<ul data-controller="swap">
+  <% @game.qcms.each do |question| %>
+    <li data-target="swap.question" class="question">
+      <%= question.question %>
+      <div class="answer-one">
+        <%= question.answer_one %>
+      </div>
+      <div class="answer-two">
+        <%= question.answer_two %>
+      </div>
+      <div class="answer-true" style="display: none;">
+        <%= question.answer_true %>
+      </div>
+    </li>
+  <% end %>
+</ul>

@@ -18,8 +18,12 @@ class UserGamesController < ApplicationController
   end
 
   def answer
-    # update the user_game score
-    # update the step of the user_game
+    @user_game = UserGame.find(params[:id])
+    @user_game.score += 1
+    @user_game.step += 1
+    @user_game.save
+
+    redirect_to game_choose_language_path(@user_game.game)
   end
 
   private
