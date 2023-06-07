@@ -1,5 +1,13 @@
 class GameQcmsController < ApplicationController
   def create
-    # raise
+    @game = Game.find(params[:game_id])
+    @game.update(level: params[:levels])
+
+    @questions = Qcm.where(level: @game.level.to_i, language: @game.language)
+    
+    @questions.each do |question|
+      GameQcm.create(game: @game, qcm: question)
+    end
+    redirect_to game_path(@game)
   end
 end
