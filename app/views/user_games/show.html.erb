@@ -1,7 +1,10 @@
 <h1>Choose a Fighter</h1>
-<p>Find me in app/views/user_games/show.html.erb</p>
 
-<%= form_with model: @user_game, url: user_game_path(@user_game), method: :patch do |f| %>
-  <%= f.select :avatar, UserGame::AVATAR_URL %>
+<%= simple_form_for @user_game do |f| %>
+  <%= f.input :avatar,
+                  as: :radio_buttons,
+                  input_html: { class: "tag-selector" },
+                  item_wrapper_class: 'tag-item',
+                  collection: UserGame::AVATAR_URL %>
   <%= f.submit 'Select', class: "submit-button" %>
 <% end %>

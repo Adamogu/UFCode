@@ -1,6 +1,13 @@
 <h1>choisi le language</h1>
 
-<%= form_with url: game_choose_level_path, method: :get do |f| %>
-  <%= f.select :languages, Qcm::LANGUAGES %>
+<%= simpl_form_for url: game_choose_level_path(@game), method: :get do |f| %>
+
+  <%= f.input :languages,
+            as: :radio_buttons,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector'},
+            collection: Qcm::LANGUAGES %>
   <%= f.submit 'Select', class: "submit-button" %>
 <% end %>
