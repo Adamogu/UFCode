@@ -3,9 +3,3 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "@popperjs/core"
 import "bootstrap"
-import "SwapController"
-
-
-
-// from 'controllers/swap_controller';
-// application.register('swap-controller', SwapController);
