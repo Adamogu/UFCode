@@ -3,7 +3,7 @@
       <p>Question :</p>
     <div>
       <ul data-controller="swap" data-user-game="<%= @user_game.id %>">
-        <%= render "question", qcm: @qcm %>
+        <%= render "question", qcm: @game.qcms.first %>
       </ul>
     </div>
   </div>

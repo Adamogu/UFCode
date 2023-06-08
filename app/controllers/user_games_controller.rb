@@ -20,6 +20,12 @@ class UserGamesController < ApplicationController
     @user_game = UserGame.find(params[:id])
   end
 
+  def avatar
+    @game = Game.find(params[:id])
+    ug = UserGame.create(game: @game, user: current_user)
+    redirect_to game_path(@game)
+  end
+
   def answer
     @user_game = UserGame.find(params[:user_game_id])
     result = params[:result]
@@ -34,7 +40,7 @@ class UserGamesController < ApplicationController
     respond_to do |format|
       if @user_game.step >= @user_game.game.qcms.count
         format.json { render json: {
-          html: render_to_string(partial: "games/success", formats: [:html]) }
+          html: render_to_string(partial: "games/result", locals: {user_game: @user_game}, formats: [:html]) }
         }
       else
 

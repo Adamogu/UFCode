@@ -1,2 +1,13 @@
-<h1>Games#index</h1>
-<p>Find me in app/views/games/index.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('Background-UFCode.png') %>); height: 100vh; background-size: cover; display: flex; flex-direction: column; justify-content: flex-start; align-items: center;">
+  <nav class="navbar">
+  </nav>
+  <h3 style="font-family: 'Press Start 2P', cursive; margin-top: 100px; color: white;">Choose a game to join</h3>
+  <!-- Le reste du contenu de la page index -->
+  <% @games.each do |game| %>
+    <% if game.lobby %>
+     <div class="bg-secondary m-2 p-2 text-white">
+        <%= link_to "JOIN", avatar_game_path(game) %>
+     </div>
+    <% end %>
+   <%end%>
+</div>

@@ -1,7 +1,8 @@
 class GamesController < ApplicationController
   def create
-    @game = Game.new
+    @game = Game.create
     @user_game = UserGame.new(user: current_user, game: @game)
+
     if @user_game.save
       redirect_to user_game_path(@user_game)
     else
@@ -19,12 +20,12 @@ class GamesController < ApplicationController
   end
 
   def index
+    @games = Game.all
   end
 
   def show
     @game = Game.find(params[:id])
     @user_game = UserGame.find_by(game: @game, user: current_user)
-    @qcm = @game.qcms.first
   end
 
   def destroy
