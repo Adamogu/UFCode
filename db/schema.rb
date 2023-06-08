@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_07_090050) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_07_142317) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -46,7 +46,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_090050) do
     t.integer "score"
     t.bigint "user_id", null: false
     t.bigint "game_id", null: false
-    t.integer "step"
+    t.integer "step", default: 0
     t.string "avatar"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

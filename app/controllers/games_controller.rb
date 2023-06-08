@@ -23,6 +23,8 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
+    @user_game = UserGame.find_by(game: @game, user: current_user)
+    @qcm = @game.qcms.first
   end
 
   def destroy

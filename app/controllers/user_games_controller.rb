@@ -1,4 +1,7 @@
+require 'pry-byebug'
+
 class UserGamesController < ApplicationController
+
   def create
     @user_game = UserGame.new(user_game_params)
     @user_game.user = current_user
@@ -18,12 +21,28 @@ class UserGamesController < ApplicationController
   end
 
   def answer
-    @user_game = UserGame.find(params[:id])
-    @user_game.score += 1
+    @user_game = UserGame.find(params[:user_game_id])
+    result = params[:result]
+    @user_game.score += 1 if result == "true"
+    # le step nous donne l'index de la question à aller prendre
     @user_game.step += 1
     @user_game.save
 
-    redirect_to game_choose_language_path(@user_game.game)
+    # stocker la question suivante
+    @qcm = @user_game.game.qcms[@user_game.step]
+
+    respond_to do |format|
+      if @user_game.step >= @user_game.game.qcms.count
+        format.json { render json: {
+          html: render_to_string(partial: "games/success", formats: [:html]) }
+        }
+      else
+
+        format.json { render json: {
+          html: render_to_string(partial: "games/question", locals: {qcm: @qcm }, formats: [:html]) }
+        }
+      end
+    end
   end
 
   private
