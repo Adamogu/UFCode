@@ -1,7 +1,7 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = ["question", "answerOne", "answerTwo", "answerTrue"]
+  static targets = ["question", "answerOne", "answerTwo", "answerTrue"] //"score" ?
 
   connect() {
     this.questionTargets.forEach((questionTarget) => {
@@ -19,5 +19,14 @@ export default class extends Controller {
     answerOneElement.style.display = "none"
     answerTwoElement.style.display = "none"
     answerTrueElement.style.display = "block"
+
+    const correct = questionElement.dataset.correct === "true"
+
+    if (correct) {
+      const scoreElement = this.scoreTarget
+      const currentScore = parseInt(scoreElement.innerText, 10)
+      const newScore = currentScore + 1
+      scoreElement.innerText = newScore.toString()
+    }
   }
 }
