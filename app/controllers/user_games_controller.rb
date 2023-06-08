@@ -34,7 +34,7 @@ class UserGamesController < ApplicationController
     respond_to do |format|
       if @user_game.step >= @user_game.game.qcms.count
         format.json { render json: {
-          html: render_to_string(partial: "games/success", formats: [:html]) }
+          html: render_to_string(partial: "games/result", locals: {user_game: @user_game}, formats: [:html]) }
         }
       else
 
