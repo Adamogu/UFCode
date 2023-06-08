@@ -20,6 +20,12 @@ class UserGamesController < ApplicationController
     @user_game = UserGame.find(params[:id])
   end
 
+  def avatar
+    @game = Game.find(params[:id])
+    ug = UserGame.create(game: @game, user: current_user)
+    redirect_to game_path(@game)
+  end
+
   def answer
     @user_game = UserGame.find(params[:user_game_id])
     result = params[:result]

@@ -6,9 +6,11 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 # seeds.rb
+# if Rails.env.development?
+Game.destroy_all
 Qcm.destroy_all
 User.destroy_all
-
+# Games.destroy_all
 
 user1 = User.create!(
   email: 'guillaume.bregaint1@gmail.com',
@@ -105,3 +107,4 @@ Qcm.create(question: "Quel est le symbole utilisé pour ajouter des éléments �
 # Answer.create(question: qcm_ruby_3.questions.second, text: "to_i", correct: true)
 # Answer.create(question: qcm_ruby_3.questions.second, text: "convert_to_integer")
 # Answer.create(question: qcm_ruby_3.questions.second, text: "parse_int")
+# end
