@@ -1,6 +1,9 @@
+# seeds.rb
+# if Rails.env.development?
+
+Game.destroy_all
 Qcm.destroy_all
 User.destroy_all
-
 
 user1 = User.create!(
   email: 'guillaume.bregaint1@gmail.com',
@@ -57,7 +60,6 @@ Qcm.create(
 
 
 # Niveau 2 - HTML
-# qcm_html_2 = Qcm.create(title: "Niveau 2 - HTML")
 
 Qcm.create(
   question: "Quelle balise est utilisée pour créer un tableau en HTML ?",
@@ -79,7 +81,6 @@ Qcm.create(
 
 
 # # Niveau 2 - Ruby
-# qcm_ruby_2 = Qcm.create(title: "Niveau 2 - RUBY")
 
 Qcm.create(
   question: "Quelle est la méthode utilisée pour ajouter un élément à la fin d'un tableau en Ruby ?",
@@ -101,7 +102,7 @@ Qcm.create(
 
 
 # # Niveau 3 - HTML
-# qcm_html_3 = Qcm.create(title: "Niveau 3 - HTML")
+
 Qcm.create(
   question: "Quelle est la différence entre les balises <article> et <section> en HTML ?",
   answer_one: "<article> est utilisé pour représenter un contenu dépendant et distribuable, tandis que <section> est utilisé pour séparer des contenus thématiques.",
@@ -121,7 +122,7 @@ Qcm.create(
 )
 
 # # Niveau 3 - Ruby
-# qcm_ruby_3 = Qcm.create(title: "Niveau 3 - Ruby")
+
 Qcm.create(
   question: "Quelle méthode permet de convertir une chaîne de caractères en un tableau de caractères individuels en Ruby ?",
   answer_one: "split",

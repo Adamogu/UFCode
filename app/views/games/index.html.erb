@@ -3,4 +3,11 @@
   </nav>
   <h3 style="font-family: 'Press Start 2P', cursive; margin-top: 100px; color: white;">Choose a game to join</h3>
   <!-- Le reste du contenu de la page index -->
+  <% @games.each do |game| %>
+    <% if game.lobby %>
+     <div class="bg-secondary m-2 p-2 text-white">
+        <%= link_to "JOIN", avatar_game_path(game) %>
+     </div>
+    <% end %>
+   <%end%>
 </div>
