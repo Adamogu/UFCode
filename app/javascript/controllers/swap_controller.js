@@ -16,7 +16,6 @@ export default class extends Controller {
     .then((data) => {
       this.element.innerHTML = data.html;
     })
-
   }
 }
 
