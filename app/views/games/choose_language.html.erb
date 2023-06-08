@@ -1,7 +1,7 @@
 <div class="banner choose-language-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('Background-UFCode.png') %>); height: 100vh; background-size: cover;">
   <div class="container">
-    <div class="choose-language-form-container">
-      <h1 class="choose-language-title">Choose your language</h1>
+    <h1 class="choose-language-title">Choose a language</h1>
+    <div class="choose-language-form">
 
 
       <%= simple_form_for :qcm, url: game_choose_level_path(@game), method: :get do |f| %>
@@ -14,7 +14,9 @@
             collection_wrapper_tag: 'div',
             collection_wrapper_class: 'category-wrapper',
             collection: Qcm::LANGUAGES %>
-        <%= f.submit 'Select', class: "choose-language-submit-button submit-button" %>
+        <div class="align-button-center">
+          <%= f.submit 'Select', class: "button create-button" %>
+        </div>
       <% end %>
     </div>
   </div>

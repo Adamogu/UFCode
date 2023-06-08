@@ -1,13 +1,16 @@
 .choose-language-title {
+  display: flex;
   font-size: 30px;
   font-weight: bold;
   text-align: center;
-  margin-top: -270px;
+  // margin-top: -270px;
   font-family: "Press Start 2P", cursive;
   color: white;
 }
 
 .choose-language-form {
+  display: flex;
+  justify-content: space-between;
   padding: 10px 20px;
   margin-top: 50px;
   border-radius: 3px;
@@ -18,20 +21,22 @@
   width: 100%;
   font-family: "Press Start 2P", cursive;
   margin-top: 20px;
-  font-size: 18px;
+  font-size: 30px;
   color: white;
   border-radius: 7px;
   padding: 10px 20px;
-  background-color: #f8f8f8;
-  color: #000;
-  border: 2px solid #000;
+   background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #fff;
   text-decoration: none;
   display: block;
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+
 }
+
 
 .choose-language-form .submit-button:hover {
   background-color: #000;
   color: #fff;
-  border-color: #fff;
+  border-color: #000;
 }

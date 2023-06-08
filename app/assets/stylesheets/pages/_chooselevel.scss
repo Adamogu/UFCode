@@ -3,7 +3,6 @@
   font-size: 30px;
   font-weight: bold;
   text-align: center;
-  margin-top: -270px;
   font-family: "Press Start 2P", cursive;
   color: white;
 }
@@ -11,6 +10,8 @@
 .choose-level-form {
   padding: 10px 20px;
   margin-top: 50px;
+  text-align: center;
+  justify-content: center;
   border-radius: 3px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
@@ -20,11 +21,12 @@
   font-family: "Press Start 2P", cursive;
   margin-top: 20px;
   font-size: 18px;
+  opacity: 0,3;
   color: white;
   border-radius: 7px;
   padding: 10px 20px;
-  background-color: #f8f8f8;
-  color: #000;
+  background-color: transparent;
+  color: #ffffff;
   border: 2px solid #000;
   text-decoration: none;
   display: block;
@@ -35,4 +37,8 @@
   background-color: #000;
   color: #fff;
   border-color: #fff;
+}
+
+.qcm_level legend{
+  display: none;
 }
