@@ -15,13 +15,13 @@
   padding: 0.1rem 0.5rem;
   background-color: #ECEAFF;
   color: #7E73FF;
-  border: 1px solid #7E73FF;
+  // border: 1px solid #7E73FF;
   margin-right: 0.6rem;
   margin-bottom: 0.4rem;
 }
 
 .tag-selector:checked + label {
-  background-color: #7E73FF;
+  background-color: #c5262e;
   color: white;
 }
 
@@ -31,14 +31,21 @@
 
 .category-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 .category-item {
-    flex: 0 0 30%;
+  flex: 0 0 30%;
 }
 
+.category-item:hover {
+  background-color: #000;
+  color: #fff;
+  border-color: #f8f8f8;
+  border-radius: 5px;
+  border: 1px solid #EAEAEA;
+}
 .category-selector {
   position: absolute;
   transform: scale(0);
@@ -48,11 +55,12 @@
   display: block;
   cursor: pointer;
   box-sizing: border-box;
+  color: white;
   width: 100%;
-  font-size: 12px;
-  text-align: left;
+  font-size: 30px;
+  text-align: center;
   padding: 10px 10px 30px 10px;
-  border: 1px solid #EAEAEA;
+  // border: 1px solid #EAEAEA;
   border-radius: 4px;
-  background-color: white;
+  // background-color: white;
 }
