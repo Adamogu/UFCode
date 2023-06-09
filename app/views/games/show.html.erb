@@ -1,5 +1,26 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('Background-UFCode.png') %>); height: 100vh; background-size: cover;">
+
   <div class="container">
+ <div id="timer">
+    <script>
+    const departMinutes = 1
+let temps = departMinutes * 60
+
+const timerElement = document.getElementById("timer")
+
+  setInterval(() => {
+    let minutes = parseInt(temps / 60, 10)
+    let secondes = parseInt(temps % 60, 10)
+
+    minutes = minutes < 10 ? "0" + minutes : minutes
+    secondes = secondes < 10 ? "0" + secondes : secondes
+
+    timerElement.innerText = `${minutes}:${secondes}`
+    temps = temps <= 0 ? 0 : temps - 1
+  }, 1000)
+
+    </script>
+ </div>
     <div>
       <ul data-controller="swap" data-user-game="<%= @user_game.id %>">
         <%= render "question", qcm: @game.qcms.first %>
