@@ -28,7 +28,7 @@ class UserGamesController < ApplicationController
   def answer
     @user_game = UserGame.find(params[:user_game_id])
     result = params[:result]
-    @user_game.score += 10*@user_game.game.level if result == "true"
+    @user_game.score += 10 * @user_game.game.level.to_i if result == "true"
     # le step nous donne l'index de la question à aller prendre
     @user_game.step += 1
     @user_game.save
@@ -43,7 +43,6 @@ class UserGamesController < ApplicationController
           html: render_to_string(partial: "games/result", locals: {user_game: @user_game}, formats: [:html]) }
         }
       else
-
         format.json { render json: {
           html: render_to_string(partial: "games/question", locals: {qcm: @qcm }, formats: [:html]) }
         }

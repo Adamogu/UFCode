@@ -8,6 +8,8 @@ export default class extends Controller {
     const result = event.currentTarget.dataset.correct;
     const user_game = this.element.dataset.userGame
 
+    console.log(`/user_games/${user_game}/answer?result=${result}`)
+
     fetch(`/user_games/${user_game}/answer?result=${result}`, {
       method: "GET",
       headers: { "Accept": "application/json" }
