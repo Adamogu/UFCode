@@ -12,24 +12,26 @@
     <div class="col-3">
      POINTS
     </div>
-    <% @users.each do |user| %>
-      <div class="row" >
-        <%# RANK %>
-        <div class="col-3">
-          <%= user.computed_score %>
-        </div>
-        <%# PSEUDO %>
-        <div class="col-3">
-          <%= user.pseudo %>
-        </div>
-        <%# LEVEL %>
-        <div class="col-3">
-          <%= user.highest_level %>
-        </div>
-        <%# POINTS %>
-        <div class="col-3">
-          <%= user.computed_score %>
-        </div>
+    <% rank = 1 %>
+      <% @users.each do |user| %>
+        <div class="row" >
+          <%# RANK %>
+          <div class="col-3">
+            <%= rank %>
+          </div>
+          <%# PSEUDO %>
+          <div class="col-3">
+            <%= user.pseudo %>
+          </div>
+          <%# LEVEL %>
+          <div class="col-3">
+            <%= user.highest_level %>
+          </div>
+          <%# POINTS %>
+          <div class="col-3">
+            <%= user.computed_score %>
+          </div>
+    <% rank += 1  %>
       </div>
     <% end %>
   </div>
