@@ -9,11 +9,13 @@ Rails.application.routes.draw do
     resources :user_games, only: [:create]
     resources :game_qcms, only: [:create]
     member do
-
       get "avatar"
     end
   end
 
+  get "leaderboard", to: "pages#leaderboard"
+
+  
   resources :user_games, only: [:show, :update] do
     get "answer", to: "user_games#answer"
   end
