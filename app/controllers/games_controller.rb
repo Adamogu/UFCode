@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
   def create
-    @game = Game.create
+    @game = Game.new
     @user_game = UserGame.new(user: current_user, game: @game)
 
     if @user_game.save
@@ -22,6 +22,13 @@ class GamesController < ApplicationController
   def index
     @games = Game.all
   end
+
+  def avatar
+    @game = Game.find(params[:id])
+    @user_game = UserGame.create(game: @game, user: current_user)
+    redirect_to user_game_path(@user_game)
+  end
+
 
   def show
     @game = Game.find(params[:id])
