@@ -4,4 +4,8 @@ class PagesController < ApplicationController
   def home
     @game = Game.new
   end
+
+  def leaderboard
+    @users = User.all
+  end
 end

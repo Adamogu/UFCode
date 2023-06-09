@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_09_091128) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_09_100513) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -28,7 +28,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_09_091128) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "language"
-    t.string "level"
+    t.string "level", default: "1"
   end
 
   create_table "qcms", force: :cascade do |t|
