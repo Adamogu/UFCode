@@ -32,6 +32,7 @@ class UserGamesController < ApplicationController
     # le step nous donne l'index de la question à aller prendre
     @user_game.step += 1
     @user_game.save
+    @game = @user_game.game
 
     # stocker la question suivante
     @qcm = @user_game.game.qcms[@user_game.step]
