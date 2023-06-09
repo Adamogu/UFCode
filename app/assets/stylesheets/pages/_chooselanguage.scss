@@ -37,13 +37,12 @@
   color: white;
   border-radius: 7px;
   padding: 10px 20px;
-   background-color: transparent;
+  background-color: transparent;
   color: #ffffff;
   border: 2px solid #fff;
   text-decoration: none;
   display: block;
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-
 }
 
 .choose-language-form:checked .submit-button:hover {

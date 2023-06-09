@@ -1,8 +1,6 @@
-<li class="choose-level-form ">
-<p>Question :</p>
-<li class="question ">
+<div class="choose-language-form">
   <%= qcm.question %>
-  <div class="d-flex align-items-center justify-content-center mt-4">
+</div>
     <div class="question" data-action="click->swap#swap" data-correct="false">
       <%= qcm.answer_one %>
     </div>
@@ -12,5 +10,3 @@
     <div class="question" data-action="click->swap#swap" data-correct="true">
       <%= qcm.answer_true %>
     </div>
-  </div>
-</li>
