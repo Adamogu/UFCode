@@ -12,7 +12,11 @@ class UserGamesController < ApplicationController
     @user_game.update(user_game_params)
 
     if @user_game.save
-      redirect_to game_choose_language_path(@user_game.game)
+      if @user_game.game.user_games.count == 2
+        redirect_to game_path(@user_game.game)
+      else
+        redirect_to game_choose_language_path(@user_game.game)
+      end
     end
   end
 
@@ -20,11 +24,6 @@ class UserGamesController < ApplicationController
     @user_game = UserGame.find(params[:id])
   end
 
-  def avatar
-    @game = Game.find(params[:id])
-    ug = UserGame.create(game: @game, user: current_user)
-    redirect_to game_path(@game)
-  end
 
   def answer
     @user_game = UserGame.find(params[:user_game_id])
@@ -33,6 +32,7 @@ class UserGamesController < ApplicationController
     # le step nous donne l'index de la question à aller prendre
     @user_game.step += 1
     @user_game.save
+    @game = @user_game.game
 
     # stocker la question suivante
     @qcm = @user_game.game.qcms[@user_game.step]
