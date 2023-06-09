@@ -12,12 +12,13 @@
   display: inline-block;
   font-size: 0.7rem;
   border-radius: 50rem;
-  padding: 0.1rem 0.5rem;
+  padding: 0.5rem;
   background-color: #ECEAFF;
   color: #7E73FF;
   // border: 1px solid #7E73FF;
-  margin-right: 0.6rem;
-  margin-bottom: 0.4rem;
+  // margin-right: 0.6rem;
+  // margin-bottom: 0.4rem;
+  margin: 0.1rem;
 }
 
 .tag-selector:checked + label {
@@ -25,8 +26,12 @@
   color: white;
 }
 
-.category-selector:checked + label {
-  color: white !important;
+.tag-selector + label:hover{
+  background-color: #c5262e;
+  color: #fff;
+  // border-color: #f8f8f8;
+  // border-radius: 5px;
+  // border: 1px solid #EAEAEA;
 }
 
 .category-wrapper {
@@ -35,17 +40,20 @@
   flex-wrap: wrap;
 }
 
-.category-item {
+.category-selector:checked {
   flex: 0 0 30%;
+  background-color: #c5262e;
+  color: #fff;
 }
 
-.category-item:hover {
-  background-color: #000;
+.category-selector:hover + label{
+  background-color: #c5262e;
   color: #fff;
   border-color: #f8f8f8;
   border-radius: 5px;
   border: 1px solid #EAEAEA;
 }
+
 .category-selector {
   position: absolute;
   transform: scale(0);
@@ -60,8 +68,13 @@
   font-size: 30px;
   text-align: center;
   justify-content: center;
-  padding: 9px 11px 9px 6px;
+  padding: 7px 19px 4px 22px;
   // border: 1px solid #EAEAEA;
   border-radius: 4px;
   // background-color: white;
+}
+
+.category-selector:checked + label {
+  color: white !important;
+  background-color: #c5262e;
 }
