@@ -7,17 +7,20 @@ User.destroy_all
 
 user1 = User.create!(
   email: 'guillaume.bregaint1@gmail.com',
-  password: '123456'
+  password: '123456',
+  pseudo: 'ElGuigs'
 )
 
 user2 = User.create!(
   email: 'adamollivier96@gmail.com',
-  password: '123456'
+  password: '123456',
+  pseudo: "MoguLeMogu"
 )
 
 user3 = User.create!(
   email: 'stanislas.zablocki@gmail.com',
-  password: '123456'
+  password: '123456',
+  pseudo: 'FunkyDaddy'
 )
 
 # Niveau 1 - HTML

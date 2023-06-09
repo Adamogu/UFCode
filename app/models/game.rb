@@ -1,7 +1,7 @@
 class Game < ApplicationRecord
-  has_many :game_qcms
+  has_many :game_qcms, dependent: :destroy
   has_many :qcms, through: :game_qcms
-  has_many :user_games
+  has_many :user_games, dependent: :destroy
   has_many :users, through: :user_games
 
   after_create :assign_qcms
