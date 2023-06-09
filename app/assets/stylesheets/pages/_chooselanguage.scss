@@ -16,6 +16,18 @@
   border-radius: 3px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
+.choose-language-form + label {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.7rem;
+  border-radius: 50rem;
+  padding: 0.1rem 0.5rem;
+  background-color: #ECEAFF;
+  color: #7E73FF;
+  // border: 1px solid #7E73FF;
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+}
 
 .choose-language-form .submit-button {
   width: 100%;
@@ -34,9 +46,13 @@
 
 }
 
-
-.choose-language-form .submit-button:hover {
+.choose-language-form:checked .submit-button:hover {
   background-color: #000;
   color: #fff;
-  border-color: #000;
+  border-color: #fff;
+}
+
+.category-item:checked + label {
+  background-color: #c5262e;
+  color: white;
 }
