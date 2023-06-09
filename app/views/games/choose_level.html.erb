@@ -1,7 +1,7 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('Background-UFCode.png') %>); height: 100vh; background-size: cover;">
   <div class="container">
-    <div class="choose-level-form">
-      <h1 class="choose-level-title">Choose a level</h1>
+    <div class="choose-level-form mt-2">
+      <h1 class="choose-level-title mb-5">Choose a level</h1>
 
 
       <%= simple_form_for :qcm, url: game_game_qcms_path(@game), method: :post do |f| %>

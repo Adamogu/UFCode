@@ -3,13 +3,13 @@
 <li class="question ">
   <%= qcm.question %>
   <div class="d-flex align-items-center justify-content-center mt-4">
-    <div class="mx-3 p-3 bg-secondary text-white text-center" data-action="click->swap#swap" data-correct="false">
+    <div class="question" data-action="click->swap#swap" data-correct="false">
       <%= qcm.answer_one %>
     </div>
-    <div class="mx-3 p-3 bg-secondary text-white text-center" data-action="click->swap#swap" data-correct="false">
+    <div class="question" data-action="click->swap#swap" data-correct="false">
       <%= qcm.answer_two %>
     </div>
-    <div class="mx-3 p-3 bg-secondary text-white text-center" data-action="click->swap#swap" data-correct="true">
+    <div class="question" data-action="click->swap#swap" data-correct="true">
       <%= qcm.answer_true %>
     </div>
   </div>
