@@ -139,4 +139,4 @@ Qcm.create(
   answer_true: "include? = collection, member? = alias d'include?",
   language: "Ruby",
   level: 3
-)
+) 

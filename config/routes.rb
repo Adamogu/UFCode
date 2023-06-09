@@ -8,9 +8,9 @@ Rails.application.routes.draw do
     get "choose_level", to: "games#choose_level", as: :choose_level
     resources :user_games, only: [:create]
     resources :game_qcms, only: [:create]
-
     member do
-      get "avatar", to: "user_games#avatar"
+
+      get "avatar"
     end
   end
 
@@ -18,6 +18,6 @@ Rails.application.routes.draw do
     get "answer", to: "user_games#answer"
   end
 
-  get "avatar_select/:game_id", to: "user_games#games"
+  # get "avatar_select/:game_id", to: "user_games#games"
   # patch '/user_games/:id', to: 'user_games#update', as: 'update_user_games'
 end
