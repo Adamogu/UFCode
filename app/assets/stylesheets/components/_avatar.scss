@@ -1,9 +1,23 @@
 .avatar {
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   object-fit: cover;
+  transition: all ease-in-out 0.5s;
 }
+
+.language-avatar {
+  height: 40px;
+}
+
+.avatar-small {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: all ease-in-out 0.5s;
+}
+
 .avatar-large {
   width: 56px;
   border-radius: 50%;
@@ -26,4 +40,11 @@
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.user_game_avatar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
 }

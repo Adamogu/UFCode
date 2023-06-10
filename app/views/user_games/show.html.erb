@@ -1,22 +1,15 @@
-
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('Background-UFCode.png') %>); height: 100vh; background-size: cover;">
-  <div class="container">
-    <h1 class="user-games-title mt-5 align-items center">Choose a Fighter</h1>
-    <div class="user-games-form-container mt-4">
-
-      <%= simple_form_for @user_game do |f| %>
-        <%= f.input :avatar,
-            as: :radio_buttons,
-            legend_tag: false,
-            label_method: lambda { |photo| render 'avatar', photo: photo },
-            input_html: { class: "tag-selector" },
-            item_wrapper_class: 'tag-item',
-            collection: UserGame::AVATAR_URL %>
-        <div class="align-button-center">
-          <%= f.submit 'Select', class: "button create-button" %>
-
-        </div>
-      <% end %>
+<h1 class="user-games-title mt-5 align-items center">Choose a Fighter</h1>
+<div class="user-games-form-container mt-4">
+  <%= simple_form_for @user_game do |f| %>
+    <%= f.input :avatar,
+        as: :radio_buttons,
+        legend_tag: false,
+        label_method: lambda { |photo| render 'avatar', photo: photo },
+        input_html: { class: "tag-selector" },
+        item_wrapper_class: 'tag-item',
+        collection: UserGame::AVATAR_URL %>
+    <div class="align-button-center">
+      <%= f.submit 'Select', class: "button create-button" %>
     </div>
-  </div>
+  <% end %>
 </div>

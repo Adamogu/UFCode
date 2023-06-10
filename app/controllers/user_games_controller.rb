@@ -1,5 +1,3 @@
-require 'pry-byebug'
-
 class UserGamesController < ApplicationController
 
   def create

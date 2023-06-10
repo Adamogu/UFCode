@@ -1,12 +1,6 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('Background-UFCode.png') %>); height: 100vh; background-size: cover;">
-  <nav class="navbar">
-  </nav>
-  <div class="container">
-    <div class="buttons-container text-center">
-      <div>
-        <%= link_to "Start Game", games_path(@game), data: { turbo_method: :post }, class: "button create-button mb-5" %>
-        <%= link_to "Join Game", games_path, class: "button join-button" %>
-      </div>
-    </div>
+<div class="buttons-container text-center">
+  <div>
+    <%= link_to "Start Game", games_path(@game), data: { turbo_method: :post }, class: "button create-button mb-5" %>
+    <%= link_to "Join Game", games_path, class: "button join-button" %>
   </div>
 </div>

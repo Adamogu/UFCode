@@ -3,7 +3,7 @@ class GameQcmsController < ApplicationController
     @game = Game.find(params[:game_id])
     @game.update(level: params[:qcm][:level])
 
-    @questions = Qcm.where(level: @game.level.to_i, language: @game.language.slice(0..-5))
+    @questions = Qcm.where(level: @game.level.to_i, language: @game.language)
     @questions.each do |question|
       GameQcm.create(game: @game, qcm: question)
     end

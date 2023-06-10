@@ -1,40 +1,20 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('Background-UFCode.png') %>); height: 100vh; background-size: cover;">
-  <div class="container">
-    <div class="row mx-auto w-100">
-      <div class="col-3 mb-3">
-        RANK
-      </div>
-      <div class="col-3 mb-3">
-        PSEUDO
-      </div>
-      <div class="col-3 mb-3">
-        LEVEL
-      </div>
-      <div class="col-3 mb-3">
-      POINTS
-      </div>
-        <% rank = 1 %>
-          <% @users.each do |user| %>
-            <div class="row" >
-              <%# RANK %>
-              <div class="col-3">
-                <%= rank %>
-              </div>
-              <%# PSEUDO %>
-              <div class="col-3">
-                <%= user.pseudo %>
-              </div>
-              <%# LEVEL %>
-              <div class="col-3">
-                <%= user.highest_level %>
-              </div>
-              <%# POINTS %>
-              <div class="col-3">
-                <%= user.computed_score %>
-              </div>
-        <% rank += 1  %>
-            </div>
-          <% end %>
+<div class="row mx-auto w-100">
+  <div class="col-3 mb-3">RANK</div>
+  <div class="col-3 mb-3">PSEUDO</div>
+  <div class="col-3 mb-3">LEVEL</div>
+  <div class="col-3 mb-3">POINTS</div>
+  <% rank = 1 %>
+  <% @users.each do |user| %>
+    <div class="row" >
+      <%# RANK %>
+      <div class="col-3"><%= rank %></div>
+      <%# PSEUDO %>
+      <div class="col-3"><%= user.pseudo %></div>
+      <%# LEVEL %>
+      <div class="col-3"><%= user.highest_level %></div>
+      <%# POINTS %>
+      <div class="col-3"><%= user.computed_score %></div>
+      <% rank += 1  %>
     </div>
-  </div>
+  <% end %>
 </div>

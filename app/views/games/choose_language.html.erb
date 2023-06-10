@@ -1,23 +1,17 @@
-<div class="banner choose-language-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('Background-UFCode.png') %>); height: 100vh; background-size: cover;">
-  <div class="container">
-    <h1 class="choose-language-title">Choose a language</h1>
-    <div class="choose-language-form">
-
-
-      <%= simple_form_for :qcm, url: game_choose_level_path(@game), method: :get do |f| %>
-        <%= f.input :languages,
-            as: :radio_buttons,
-            legend_tag: false,
-            label_method: lambda { |cat| render 'languages', cat: cat },
-            input_html: {class: 'category-selector'},
-            item_wrapper_class: 'category-item',
-            collection_wrapper_tag: 'div',
-            collection_wrapper_class: 'category-wrapper',
-            collection: Qcm::LANGUAGES %>
-        <div class="align-button-center">
-          <%= f.submit 'Select', class: "button create-button" %>
-        </div>
-      <% end %>
+<h1 class="choose-language-title">Choose a language</h1>
+<div class="choose-language-form">
+  <%= simple_form_for :qcm, url: game_choose_level_path(@game), method: :get do |f| %>
+    <%= f.input :languages,
+        as: :radio_buttons,
+        legend_tag: false,
+        label_method: lambda { |cat| render 'languages', cat: cat },
+        input_html: {class: 'category-selector'},
+        item_wrapper_class: 'category-item',
+        collection_wrapper_tag: 'div',
+        collection_wrapper_class: 'category-wrapper',
+        collection: Qcm::LANGUAGES %>
+    <div class="align-button-center">
+      <%= f.submit 'Select', class: "button create-button" %>
     </div>
-  </div>
+  <% end %>
 </div>
