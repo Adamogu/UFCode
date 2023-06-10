@@ -2,12 +2,12 @@
   <h2 style="font-family: 'Press Start 2P', cursive; margin-top: -50px; color: white;">Your Score</h2>
 
   <div class="score">
-    <%= user_game.score %>
-  </div>
   <% @game.users.each do |user| %>
       <p><%= user.pseudo %></p>
       <%= image_tag user.user_games.find_by(game: @game).avatar, class: "avatar" %>
   <% end %>
+    <%= user_game.score %>
+  </div>
 </div>
 
 <%# <%= javascript_include_tag 'score-animation' %>
