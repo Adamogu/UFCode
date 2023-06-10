@@ -1,19 +1,19 @@
 <div class="row mx-auto w-100">
-  <div class="col-3 mb-3">RANK</div>
-  <div class="col-3 mb-3">PSEUDO</div>
-  <div class="col-3 mb-3">LEVEL</div>
-  <div class="col-3 mb-3">POINTS</div>
+  <div class="col-2 mb-3">RANK</div>
+  <div class="col-4 mb-3">PSEUDO</div>
+  <div class="col-3 mb-3 text-end">LEVEL</div>
+  <div class="col-3 mb-3 text-end">POINTS</div>
   <% rank = 1 %>
-  <% @users.each do |user| %>
-    <div class="row" >
+  <% @users.ranked.each do |user| %>
+    <div class="row mb-2">
       <%# RANK %>
-      <div class="col-3"><%= rank %></div>
+      <div class="col-2"><%= rank %></div>
       <%# PSEUDO %>
-      <div class="col-3"><%= user.pseudo %></div>
+      <div class="col-4"><%= image_tag user.user_games.last.avatar, class: "avatar-small mx-2" %><%= user.pseudo %></div>
       <%# LEVEL %>
-      <div class="col-3"><%= user.highest_level %></div>
+      <div class="col-3 text-end"><%= user.highest_level %></div>
       <%# POINTS %>
-      <div class="col-3"><%= user.computed_score %></div>
+      <div class="col-3 text-end"><%= user.computed_score %></div>
       <% rank += 1  %>
     </div>
   <% end %>

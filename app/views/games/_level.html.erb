@@ -1,0 +1,12 @@
+<div class="bg-white rounded p-3 mx-2 badge-level d-flex flex-column justify-content-start">
+  <h5>Level <span class="text-color-<%= level %>"><%= level %></span></h5> 
+  <div>
+    <% if level == 1 %>
+      <p>On y va Molo</p>
+    <% elsif level == 2 %>
+      <p>On commence à être chaud</p>
+    <% else %>
+      <p>Le code n'a plus de secret</p>
+    <% end %>
+  </div>
+</div>

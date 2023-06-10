@@ -1,40 +1,61 @@
-/* Styles for the Choose Level page */
-.choose-level-title {
-  font-size: 30px;
-  font-weight: bold;
-  text-align: center;
-  font-family: "Press Start 2P", cursive;
-  color: white;
+.badge-level {
+  font-family: "Nunito";
+  color: black;
+  p {
+    font-size: 18px !important;
+    color: black !important;
+    text-shadow: none !important;
+    margin-bottom: 0px !important;
+  }
 }
 
-.choose-level-form {
-  padding: 10px 20px;
-  margin-top: 50px;
-  text-align: center;
-  justify-content: center;
-  border-radius: 3px;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+.text-color-1 {
+  color: $green;
 }
 
-.choose-level-form .submit-button {
-  width: 100%;
-  font-family: "Press Start 2P", cursive;
-  margin-top: 20px;
-  font-size: 18px;
-  opacity: 0,3;
-  color: white;
-  border-radius: 7px;
-  padding: 10px 20px;
-  background-color: transparent;
-  color: #ffffff;
-  border: 2px solid #000;
-  text-decoration: none;
-  display: block;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+.text-color-2 {
+  color: $orange;
 }
 
-.choose-level-form .submit-button:hover {
-  background-color: #000;
-  color: #fff;
-  border-color: #fff;
+.text-color-3 {
+  color: $red;
+}
+
+#qcm_level_1 + label .badge-level {
+  border: 5px solid transparent !important;
+  transition: all ease-in-out 0.3s;
+}
+
+#qcm_level_2 + label .badge-level {
+  border: 5px solid transparent !important;
+  transition: all ease-in-out 0.3s;
+}
+
+#qcm_level_3 + label .badge-level {
+  border: 5px solid transparent !important;
+  transition: all ease-in-out 0.3s;
+}
+
+#qcm_level_1:checked + label .badge-level {
+  border: 5px solid $green !important;
+}
+
+#qcm_level_2:checked + label .badge-level {
+  border: 5px solid $orange !important;
+}
+
+#qcm_level_3:checked + label .badge-level {
+  border: 5px solid $red !important;
+}
+
+#qcm_level_1:hover + label .badge-level {
+  border: 5px solid $green !important;
+}
+
+#qcm_level_2:hover + label .badge-level {
+  border: 5px solid $orange !important;
+}
+
+#qcm_level_3:hover + label .badge-level {
+  border: 5px solid $red !important;
 }

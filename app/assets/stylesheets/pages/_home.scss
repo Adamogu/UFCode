@@ -8,7 +8,7 @@
   font-family: "Press Start 2P", cursive;
   border: 1px solid transparent;
   border-radius: 4px;
-  transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.3s;
 }
 
 .nav-link:hover {
@@ -93,11 +93,11 @@ height: calc(100vh - 56px);
   border: 2px solid transparent;
   text-decoration: none;
   display: block;
-  transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.3s;
 }
 
 .create-button:hover, .join-button:hover {
-  color: #fff;
+  color: $red;
   border-color: #fff;
 }
 

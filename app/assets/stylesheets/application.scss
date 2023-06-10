@@ -13,4 +13,12 @@
 @import "components/login";
 @import "pages/usergames";
 @import "pages/chooselanguage";
-@import "pages/chooselevel"
+@import "pages/chooselevel";
+
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+}
