@@ -1,62 +1,66 @@
 .languages {
   object-fit: contain;
   object-position: center;
-  height: 150px;
+  height: 60px;
 }
 
-.choose-language-title {
-  display: flex;
-  font-size: 30px;
-  font-weight: bold;
-  text-align: center;
-  font-family: "Press Start 2P", cursive;
+label .badge-languages {
+  transition: all ease-in-out 0.3s;
+}
+
+// RUBY 
+
+#qcm_languages_ruby + label {
+  color: $red;
+  font-family: "Nunito", "Helvetica", "sans-serif";
+}
+
+#qcm_languages_ruby:checked + label .badge-languages {
+  background-color: $red !important;
+  border-color: $red !important;
   color: white;
 }
 
-.choose-language-form {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 20px;
-  margin-top: 50px;
-  border-radius: 3px;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-}
-.choose-language-form + label {
-  cursor: pointer;
-  display: inline-block;
-  font-size: 0.7rem;
-  border-radius: 50rem;
-  padding: 0.1rem 0.5rem;
-  background-color: #ECEAFF;
-  color: #7E73FF;
-  // border: 1px solid #7E73FF;
-  margin-right: 0.6rem;
-  margin-bottom: 0.4rem;
-}
-
-.choose-language-form .submit-button {
-  width: 100%;
-  font-family: "Press Start 2P", cursive;
-  margin-top: 20px;
-  font-size: 30px;
+#qcm_languages_ruby:hover + label .badge-languages {
+  background-color: $red !important;
+  border-color: $red !important;
   color: white;
-  border-radius: 7px;
-  padding: 10px 20px;
-  background-color: transparent;
-  color: #ffffff;
-  border: 2px solid #080808;
-  text-decoration: none;
-  display: block;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
-.choose-language-form:checked .submit-button:hover {
-  background-color: #000;
-  color: #fff;
-  border-color: #fff;
+// javascript 
+
+#qcm_languages_javascript + label {
+  color: $yellow;
+  font-family: "Nunito", "Helvetica", "sans-serif";
 }
 
-.category-item:checked + label {
-  background-color: $red;
+#qcm_languages_javascript:checked + label .badge-languages {
+  background-color: $yellow !important;
+  border-color: $yellow !important;
+  color: white;
+}
+
+#qcm_languages_javascript:hover + label .badge-languages {
+  background-color: $yellow !important;
+  border-color: $yellow !important;
+  color: white;
+}
+
+// HTML
+
+#qcm_languages_html + label {
+  color: $blue;
+  font-family: "Nunito", "Helvetica", "sans-serif";
+}
+
+#qcm_languages_html:checked + label .badge-languages {
+  background-color: $blue !important;
+  border-color: $blue !important;
+  color: white;
+}
+
+#qcm_languages_html:hover + label .badge-languages {
+  background-color: $blue !important;
+  border-color: $blue !important;
   color: white;
 }

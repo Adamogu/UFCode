@@ -1,17 +1,15 @@
-<h1 class="choose-language-title">Choose a language</h1>
-<div class="choose-language-form">
-  <%= simple_form_for :qcm, url: game_choose_level_path(@game), method: :get do |f| %>
-    <%= f.input :languages,
-        as: :radio_buttons,
-        legend_tag: false,
-        label_method: lambda { |cat| render 'languages', cat: cat },
-        input_html: {class: 'category-selector'},
-        item_wrapper_class: 'category-item',
-        collection_wrapper_tag: 'div',
-        collection_wrapper_class: 'category-wrapper',
-        collection: Qcm::LANGUAGES %>
-    <div class="align-button-center">
-      <%= f.submit 'Select', class: "button create-button" %>
-    </div>
-  <% end %>
-</div>
+<h1>Choose a language</h1>
+<%= simple_form_for :qcm, url: game_choose_level_path(@game), method: :get do |f| %>
+  <%= f.input :languages,
+      as: :radio_buttons,
+      legend_tag: false,
+      label_method: lambda { |cat| render 'languages', cat: cat },
+      input_html: {class: 'category-selector'},
+      item_wrapper_class: 'category-item',
+      collection_wrapper_tag: 'div',
+      collection_wrapper_class: 'category-wrapper',
+      collection: Qcm::LANGUAGES %>
+  <div class="align-button-center">
+    <%= f.submit 'Select', class: "button create-button" %>
+  </div>
+<% end %>

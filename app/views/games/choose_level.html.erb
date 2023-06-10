@@ -1,14 +1,15 @@
-<div class="choose-level-form mt-2">
-  <h1 class="choose-level-title mb-5">Choose a level</h1>
-  <%= simple_form_for :qcm, url: game_game_qcms_path(@game), method: :post do |f| %>
-    <%= f.input :level,
-        legend_tag: false,
-        as: :radio_buttons,
-        collection_wrapper_tag: 'div',
-        collection_wrapper_class: 'category-wrapper',
-        item_wrapper_class: 'category-item',
-        input_html: {class: 'category-selector'},
-        collection: Qcm::LEVELS %>
-    <%= f.submit 'Select', class: "submit-button" %>
-  <% end %>
-</div>
+<h1>Choose a level</h1>
+<%= simple_form_for :qcm, url: game_game_qcms_path(@game), method: :post do |f| %>
+  <%= f.input :level,
+      legend_tag: false,
+      as: :radio_buttons,
+      label_method: lambda { |level| render "level", level: level },
+      collection_wrapper_tag: 'div',
+      collection_wrapper_class: 'category-wrapper',
+      item_wrapper_class: 'category-item',
+      input_html: {class: 'category-selector'},
+      collection: Qcm::LEVELS %>
+  <div class="align-button-center">
+    <%= f.submit 'Select', class: "button create-button" %>
+  </div>
+<% end %>
