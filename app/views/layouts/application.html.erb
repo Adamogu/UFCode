@@ -12,9 +12,13 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body><%= render "shared/navbar" %>
-<%= render "shared/flashes" %>
-
-    <%= yield %>
+  <body>
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('Background-UFCode.png') %>); height: 100vh; background-size: cover;">
+      <div class="container">
+        <%= render "shared/navbar" %>
+        <%= render "shared/flashes" %>
+        <%= yield %>
+      </div>
+    </div>    
   </body>
 </html>

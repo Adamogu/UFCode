@@ -6,6 +6,14 @@
 
 .nav-link {
   font-family: "Press Start 2P", cursive;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: all ease-in-out 0.5s;
+}
+
+.nav-link:hover {
+  color: white;
+  border: 1px solid white;
 }
 
 .score {
@@ -34,7 +42,7 @@
 // }
 
 .banner p {
-  font-size: 20px;
+  font-size: 18px;
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -82,14 +90,13 @@ height: calc(100vh - 56px);
   padding: 10px 20px;
   background-color: #f8f8f8;
   color: #000;
-  border: 2px solid #000;
+  border: 2px solid transparent;
   text-decoration: none;
   display: block;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  transition: all ease-in-out 0.5s;
 }
 
 .create-button:hover, .join-button:hover {
-  background-color: #000;
   color: #fff;
   border-color: #fff;
 }

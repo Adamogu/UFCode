@@ -1,5 +1,6 @@
 .tag-item {
   display: inline-block;
+  margin: 5px;
 }
 
 .tag-selector {
@@ -22,12 +23,12 @@
 }
 
 .tag-selector:checked + label {
-  background-color: #c5262e;
+  background-color: $red;
   color: white;
 }
 
 .tag-selector + label:hover{
-  background-color: #c5262e;
+  background-color: $red;
   color: #fff;
   // border-color: #f8f8f8;
   // border-radius: 5px;
@@ -42,12 +43,12 @@
 
 .category-selector:checked {
   flex: 0 0 30%;
-  background-color: #c5262e;
+  background-color: $red;
   color: #fff;
 }
 
 .category-selector:hover + label{
-  background-color: #c5262e;
+  background-color: $red;
   color: #fff;
   border-color: #f8f8f8;
   border-radius: 5px;
@@ -76,5 +77,5 @@
 
 .category-selector:checked + label {
   color: white !important;
-  background-color: #c5262e;
+  background-color: $red;
 }

@@ -2,11 +2,13 @@ class GamesController < ApplicationController
   def create
     @game = Game.new
     @user_game = UserGame.new(user: current_user, game: @game)
+    @game.update(name: "#{current_user.pseudo}'s game")
+    @game.update(user: current_user)
 
     if @user_game.save
       redirect_to user_game_path(@user_game)
     else
-
+      render "pages#home", notice: "Oops, Something went wrong, please try again !"
     end
   end
 
@@ -20,7 +22,7 @@ class GamesController < ApplicationController
   end
 
   def index
-    @games = Game.all
+    @games = Game.joignable.where.not(user: current_user)
   end
 
   def avatar
