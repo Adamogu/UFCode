@@ -1,3 +1,4 @@
+<%= audio_tag "sound-fight.mp3", id: "game-start-audio" %>
 <% if @game.user_games.count < 2 %>
   <div data-controller="game" data-game-game-id-value="<%= @game.id %>">
     Waiting For Opponent
@@ -5,12 +6,14 @@
   </div>
 <% else %>
 
-
   <div id="timer">
     <script>
       const departMinutes = 1
       let temps = departMinutes * 60
-
+      document.addEventListener('DOMContentLoaded', (event) => {
+      var gameStartAudio = document.getElementById('game-start-audio');
+      console.log(gameStartAudio)
+      gameStartAudio.play();
       const timerElement = document.getElementById("timer")
 
       setInterval(() => {
@@ -31,6 +34,7 @@
           timerElement.style.display = "none" // Masquer le timer
         }
       }, 1000)
+          })
     </script>
   </div>
   <div>
