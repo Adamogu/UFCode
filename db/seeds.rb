@@ -36,7 +36,7 @@ QUESTIONS.each do |question|
         answer_true: info["answer_true"]
       )
     end
-  end 
+  end
 end
 
 # CREATION DE 10 GAMES RANDOM
@@ -56,4 +56,3 @@ end
     GameQcm.create!(game: game, qcm: Qcm.where(level: level, language: language).sample)
   end
 end
-
