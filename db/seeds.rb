@@ -1,6 +1,17 @@
 Game.destroy_all
 Qcm.destroy_all
 User.destroy_all
+require "pry-byebug"
+
+def convert_language(language)
+  if language == "html"
+    return "HTML"
+  elsif language == "ruby"
+    return "Ruby"
+  else
+    return "JavaScript"
+  end
+end
 
 QUESTIONS = YAML.load_file(Rails.root.join("db/data/questions.yml"))
 USERS = YAML.load_file(Rails.root.join("db/data/users.yml"))
@@ -18,7 +29,7 @@ QUESTIONS.each do |question|
   question[1].each do |question|
     Qcm.create!(
       level: question[0].gsub('level_', '').to_i,
-      language: language,
+      language: convert_language(language),
       question: question[1]["question"]["name"],
       answer_one: question[1]["question"]["answer_one"],
       answer_two: question[1]["question"]["answer_two"],
@@ -36,6 +47,7 @@ end
   game = Game.create!(user: user, name: "#{user.pseudo}'s game", level: level.to_s, language: language, status: "started")
   # USERGAME CREATOR
   UserGame.create!(user: user, game: game, score: (0..100).to_a.sample, step: 4, avatar: UserGame::AVATAR_URL.sample)
+  game.update(status: "started")
   # USERGAME JOINEUR
   UserGame.create!(user: User.all.reject{|u|u == User.first}.sample, game: game, score: (0..100).to_a.sample, step: 4, avatar: UserGame::AVATAR_URL.sample)
   # Game QCMS
@@ -43,3 +55,4 @@ end
     GameQcm.create!(game: game, qcm: Qcm.where(level: level, language: language).sample)
   end
 end
+

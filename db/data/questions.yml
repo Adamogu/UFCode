@@ -1,15 +1,15 @@
 ruby:
   level_1:
     question:
-      name: "Quel mot-clé est utilisé pour définir une méthode en Ruby ?",
-      answer_one: "function",
-      answer_two: "method",
-      answer_true: "def",
+      name: "Quel mot-clé est utilisé pour définir une méthode en Ruby ?"
+      answer_one: "function"
+      answer_two: "method"
+      answer_true: "def"
     question:
-      name: "Quel est le symbole utilisé pour ajouter des éléments à un tableau en Ruby ?",
-      answer_one: "+=",
-      answer_two: ">>",
-      answer_true: "<<",
+      name: "Quel est le symbole utilisé pour ajouter des éléments à un tableau en Ruby ?"
+      answer_one: "+="
+      answer_two: ">>"
+      answer_true: "<<"
     question:
       name:  "Quelle est la méthode utilisée pour afficher du texte dans la console en Ruby ?"
       answer_one: "print"
@@ -27,15 +27,15 @@ ruby:
       answer_true: "to_i"
   level_2:
     question:
-      name: "Quelle est la méthode utilisée pour ajouter un élément à la fin d'un tableau en Ruby ?",
-      answer_one: "add",
-      answer_two: "append",
-      answer_true: "push",
+      name: "Quelle est la méthode utilisée pour ajouter un élément à la fin d'un tableau en Ruby ?"
+      answer_one: "add"
+      answer_two: "append"
+      answer_true: "push"
     question:
-      name: "Quelle est la méthode utilisée pour inverser l'ordre des éléments dans un tableau en Ruby ?",
-      answer_one: "flip",
-      answer_two: "invert",
-      answer_true: "reverse",
+      name: "Quelle est la méthode utilisée pour inverser l'ordre des éléments dans un tableau en Ruby ?"
+      answer_one: "flip"
+      answer_two: "invert"
+      answer_true: "reverse"
     question:
       name: "Quelle méthode est utilisée pour transformer tous les caractères d'une chaîne en majuscules en Ruby ?"
       answer_one: "uppercase"
@@ -51,17 +51,17 @@ ruby:
       answer_one: "remove_duplicates"
       answer_two: "distinct"
       answer_true: "uniq!"
-level_3:
+  level_3:
     question:
-      name:  "Quelle méthode permet de convertir une chaîne de caractères en un tableau de caractères individuels en Ruby ?",
-      answer_one: "split",
-      answer_two: "character",
-      answer_true: "each_char",
+      name:  "Quelle méthode permet de convertir une chaîne de caractères en un tableau de caractères individuels en Ruby ?"
+      answer_one: "split"
+      answer_two: "character"
+      answer_true: "each_char"
     question:
-      name: "Quelle est la différence entre 'include?' et 'member?' en Ruby ?",
-      answer_one: "include? = présence dans une collection, member? = présence dans un module.",
-      answer_two: "include? = membre d'un module, member? = présence dans une collection.",
-      answer_true: "include? = collection, member? = alias d'include?",
+      name: "Quelle est la différence entre 'include?' et 'member?' en Ruby ?"
+      answer_one: "include? = présence dans une collection, member? = présence dans un module."
+      answer_two: "include? = membre d'un module, member? = présence dans une collection."
+      answer_true: "include? = collection, member? = alias d'include?"
     question:
       name: "Quelle méthode permet d'exécuter une fonction donnée sur chaque élément d'un tableau en Ruby ?"
       answer_one: ".execute"
@@ -80,15 +80,15 @@ level_3:
 html:
   level_1:
     question:
-      name: "Qu'est-ce que HTML signifie ?",
-      answer_one: "HyperLink and Text Markup Language",
-      answer_two: "Highly Technical Markup Language",
-      answer_true: "HyperText Markup Language",
+      name: "Qu'est-ce que HTML signifie ?"
+      answer_one: "HyperLink and Text Markup Language"
+      answer_two: "Highly Technical Markup Language"
+      answer_true: "HyperText Markup Language"
     question:
-      name: "Quelle balise est utilisée pour créer un lien hypertexte ?",
-      answer_one: "<link>",
-      answer_two: "<href>",
-      answer_true: "<a>",
+      name: "Quelle balise est utilisée pour créer un lien hypertexte ?"
+      answer_one: "<link>"
+      answer_two: "<href>"
+      answer_true: "<a>"
     question:
       name: "Quelle balise HTML est utilisée pour définir un titre de page ?"
       answer_one: "<title>"
@@ -106,15 +106,15 @@ html:
       answer_true: "<ul>"
   level_2:
     question:
-      name: "Quelle balise est utilisée pour créer un tableau en HTML ?",
-      answer_one: "<tab>",
-      answer_two: "<grid>",
-      answer_true: "<table>",
+      name: "Quelle balise est utilisée pour créer un tableau en HTML ?"
+      answer_one: "<tab>"
+      answer_two: "<grid>"
+      answer_true: "<table>"
     question:
-      name:  "Quelle est la différence entre les balises <div> et <span> en HTML ?",
-      answer_one: "Aucune, ce sont des balises équivalentes.",
-      answer_two: "La balise <div> est utilisée pour les conteneurs de blocs, tandis que la balise <span> est utilisée pour les conteneurs de lignes.",
-      answer_true: "La balise <div> est utilisée pour les conteneurs de blocs, tandis que la balise <span> est utilisée pour les conteneurs de texte en ligne.",
+      name:  "Quelle est la différence entre les balises <div> et <span> en HTML ?"
+      answer_one: "Aucune, ce sont des balises équivalentes."
+      answer_two: "La balise <div> est utilisée pour les conteneurs de blocs, tandis que la balise <span> est utilisée pour les conteneurs de lignes."
+      answer_true: "La balise <div> est utilisée pour les conteneurs de blocs, tandis que la balise <span> est utilisée pour les conteneurs de texte en ligne."
     question:
       name: "Quelle balise HTML est utilisée pour créer un formulaire ?"
       answer_one: "<input>"
@@ -130,17 +130,17 @@ html:
       answer_one: "<require>"
       answer_two: "<style>"
       answer_true: "<link>"
-level_3:
+  level_3:
     question:
-      name: "Quelle est la différence entre les balises <article> et <section> en HTML ?",
-      answer_one: "<article> est utilisé pour représenter un contenu dépendant et distribuable, tandis que <section> est utilisé pour séparer des contenus thématiques.",
-      answer_two: "<article> est utilisé pour les articles de blog, tandis que <section> est utilisé pour les sections génériques.",
-      answer_true: "<article> est utilisé pour le contenu réutilisable et indépendant, tandis que <section> est utilisé pour les sections thématiques de contenu.",
+      name: "Quelle est la différence entre les balises <article> et <section> en HTML ?"
+      answer_one: "<article> est utilisé pour représenter un contenu dépendant et distribuable, tandis que <section> est utilisé pour séparer des contenus thématiques."
+      answer_two: "<article> est utilisé pour les articles de blog, tandis que <section> est utilisé pour les sections génériques."
+      answer_true: "<article> est utilisé pour le contenu réutilisable et indépendant, tandis que <section> est utilisé pour les sections thématiques de contenu."
     question:
-      name:  "Quelle balise HTML est utilisée pour représenter une définition de terme ?",
-      answer_one: "<dft>",
-      answer_two: "<dof>",
-      nswer_true: "<dfn>",
+      name:  "Quelle balise HTML est utilisée pour représenter une définition de terme ?"
+      answer_one: "<dft>"
+      answer_two: "<dof>"
+      nswer_true: "<dfn>"
     question:
       name: "Quelle balise HTML est utilisée pour définir une légende pour un élément multimédia ?"
       answer_one: "<caption>"
@@ -209,7 +209,7 @@ javascript:
       answer_one: "cut"
       answer_two: "subset"
       answer_true: "slice"
-level_3:
+  level_3:
     question:
       name: "Quelle méthode permet de trier les éléments d'un tableau en JavaScript en utilisant une fonction de comparaison personnalisée ?"
       answer_one: "groupby"
@@ -235,4 +235,3 @@ level_3:
       answer_one: "all"
       answer_two: "check"
       answer_true: "every"
->>>>>>> master
