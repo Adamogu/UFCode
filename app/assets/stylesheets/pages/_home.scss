@@ -91,21 +91,14 @@ height: calc(100vh - 56px);
   width: 100%;
   display: flex;
   justify-content: center;
-
 }
 
 .left-gif {
-  position: absolute;
-  left: 250px;
-  top: 50%;
-  transform: translateY(-50%);
+  height: 60vh;
+  align-self: flex-end;
 }
 
 .right-gif {
-  margin: -30px;
-  position: absolute;
-  right: 250px;
-  top: 55%;
-  transform: translateY(-50%);
-  margin-right: -10px;
+  height: 60vh;
+  align-self: flex-end;
 }
