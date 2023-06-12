@@ -1,4 +1,5 @@
 <h1 class="user-games-title mt-5 align-items center">Choose a Fighter</h1>
+  <%= audio_tag "sound-fight.mp3", id: "game-start-audio" %>
 <div class="user-games-form-container mt-4">
   <%= simple_form_for @user_game do |f| %>
     <%= f.input :avatar,
@@ -13,3 +14,9 @@
     </div>
   <% end %>
 </div>
+
+<script>
+    var gameStartAudio = document.getElementById('game-start-audio');
+      console.log(gameStartAudio)
+      gameStartAudio.play();
+</script>
