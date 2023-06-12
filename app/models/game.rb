@@ -5,7 +5,6 @@ class Game < ApplicationRecord
   has_many :users, through: :user_games
   belongs_to :user
   scope :joignable, -> { where(status: 'joignable') }
-
 end
 
 # STATUS :
