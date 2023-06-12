@@ -1,7 +1,6 @@
 Game.destroy_all
 Qcm.destroy_all
 User.destroy_all
-require "pry-byebug"
 
 def convert_language(language)
   if language == "html"
@@ -27,14 +26,16 @@ end
 QUESTIONS.each do |question|
   language = question[0]
   question[1].each do |question|
-    Qcm.create!(
-      level: question[0].gsub('level_', '').to_i,
-      language: convert_language(language),
-      question: question[1]["question"]["name"],
-      answer_one: question[1]["question"]["answer_one"],
-      answer_two: question[1]["question"]["answer_two"],
-      answer_true: question[1]["question"]["answer_true"]
-    )
+    question[1].each do |info|
+      Qcm.create!(
+        level: question[0].gsub('level_', '').to_i,
+        language: convert_language(language),
+        question: info["question"],
+        answer_one: info["answer_one"],
+        answer_two: info["answer_two"],
+        answer_true: info["answer_true"]
+      )
+    end
   end 
 end
 
