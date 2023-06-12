@@ -1,41 +1,16 @@
 <% if @game.user_games.count < 2 %>
   <div data-controller="game" data-game-game-id-value="<%= @game.id %>">
     Waiting For Opponent
-
   </div>
 <% else %>
 
-
-  <div id="timer">
-    <script>
-      const departMinutes = 1
-      let temps = departMinutes * 60
-
-      const timerElement = document.getElementById("timer")
-
-      setInterval(() => {
-        let minutes = parseInt(temps / 60, 10)
-        let secondes = parseInt(temps % 60, 10)
-
-        minutes = minutes < 10 ? "0" + minutes : minutes
-        secondes = secondes < 10 ? "0" + secondes : secondes
-
-        timerElement.innerText = `${minutes}:${secondes}`
-        temps = temps <= 0 ? 0 : temps - 1
-
-        // Vérifier si toutes les questions ont été répondues
-        const answeredQuestions = document.querySelectorAll("[data-action='click->swap#swap'].answered")
-        const totalQuestions = document.querySelectorAll("[data-action='click->swap#swap']").length
-
-        if (answeredQuestions.length === totalQuestions) {
-          timerElement.style.display = "none" // Masquer le timer
-        }
-      }, 1000)
-    </script>
-  </div>
   <div>
+    <% if @game.user_games.find_by(user: current_user).step == 5 %>
+      <%= render "result", game: @game %>
+    <% else %>
     <ul data-controller="swap" data-user-game="<%= @user_game.id %>">
-      <%= render "question", qcm: @game.qcms.first %>
+      <%= render "question", qcm: @game.qcms[@game.user_games.find_by(user: current_user).step] %>
     </ul>
+    <% end %>
   </div>
 <% end %>

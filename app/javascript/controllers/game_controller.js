@@ -11,9 +11,7 @@ export default class extends Controller {
       {
         received: data => {
           console.log("received", data)
-          // Vérifier si les deux joueurs sont présents
           window.location.href = window.location.href
-
         }
       }
     )

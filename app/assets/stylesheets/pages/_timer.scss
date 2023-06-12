@@ -1,4 +1,11 @@
 #timer {
   font-weight: bold;
-  font-size: 80px;
+  font-size: 24px;
+  padding: 20px;
+  background-color: black;
+  border-radius: 4px;
+  border: 1px solid $red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
