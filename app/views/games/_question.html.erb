@@ -1,12 +1,37 @@
 <div class="question-title">
   <%= qcm.question %>
 </div>
-  <div class="question mt-2" data-action="click->swap#swap" data-correct="false">
-    <%= qcm.answer_one %>
-  </div>
-  <div class="question mt-2" data-action="click->swap#swap" data-correct="false">
-    <%= qcm.answer_two %>
-  </div>
-  <div class="question mt-2" data-action="click->swap#swap" data-correct="true">
-    <%= qcm.answer_true %>
-  </div>
+<div class="question mt-2" data-action="click->swap#swap" data-correct="false">
+  <%= qcm.answer_one %>
+</div>
+<div class="question mt-2" data-action="click->swap#swap" data-correct="false">
+  <%= qcm.answer_two %>
+</div>
+<div class="question mt-2" data-action="click->swap#swap" data-correct="true">
+  <%= qcm.answer_true %>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const questionElements = document.querySelectorAll('.question');
+
+    questionElements.forEach((questionElement) => {
+      questionElement.addEventListener('click', () => {
+        questionElements.forEach((element) => {
+          element.classList.remove('selected');
+          element.classList.remove('correct');
+          element.classList.remove('incorrect');
+        });
+
+        questionElement.classList.add('selected');
+
+        const isCorrect = questionElement.getAttribute('data-correct') === 'true';
+
+        if (isCorrect) {
+          questionElement.classList.add('correct');
+        } else {
+          questionElement.classList.add('incorrect');
+        }
+      });
+    });
+  });
+</script>

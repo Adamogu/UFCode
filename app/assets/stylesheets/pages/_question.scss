@@ -13,18 +13,15 @@
   cursor: pointer;
   display: flex;
   justify-content: center;
+  align-items: center;
   font-size: 1rem;
   border-radius: 70rem;
   padding: 0.1rem 0.5rem;
   background-color: #ECEAFF;
   color: #000000;
   border: 1px solid #000000;
-  margin-right: 0.6rem;
   margin: 1rem;
   transition: all ease-in-out 0.3s;
-  animation: fade-in 0.5s ease-in-out forwards;
-  animation-delay: 1s; /* Ajout du délai d'1 seconde */
-  opacity: 0; /* Masque les questions au départ */
 }
 
 .question:hover {
@@ -33,8 +30,17 @@
   border-color: #fff;
 }
 
-@keyframes fade-in {
-  to {
-    opacity: 1;
-  }
+.question.selected {
+  background-color: #c5262e;
+  color: #fff;
+}
+
+.question.correct {
+  background-color: #22a025;
+  color: #fff;
+}
+
+.question.incorrect {
+  background-color: #d93025;
+  color: #fff;
 }
