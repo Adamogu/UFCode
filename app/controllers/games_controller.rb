@@ -31,7 +31,6 @@ class GamesController < ApplicationController
     redirect_to user_game_path(@user_game)
   end
 
-
   def show
     @game = Game.find(params[:id])
     @user_game = UserGame.find_by(game: @game, user: current_user)
