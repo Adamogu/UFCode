@@ -1,0 +1,35 @@
+ruby:
+  level_1:
+    question:
+      name: "COUCOU"
+      answer_one: "réponse 1"
+      answer_two: "réponse 2"
+      answer_true: "réponse 3"
+    question:
+      name: "COUCOU"
+      answer_one: "réponse 1"
+      answer_two: "réponse 2"
+      answer_true: "réponse 3"
+  level_2:
+    question:
+      name: "COUCOU"
+      answer_one: "réponse 1"
+      answer_two: "réponse 2"
+      answer_true: "réponse 3"
+    question:
+      name: "COUCOU"
+      answer_one: "réponse 1"
+      answer_two: "réponse 2"
+      answer_true: "réponse 3"      
+html:
+  level_1:
+    question:
+      name: "COUCOU"
+      answer_one: "réponse 1"
+      answer_two: "réponse 2"
+      answer_true: "réponse 3"
+    question:
+      name: "COUCOU"
+      answer_one: "réponse 1"
+      answer_two: "réponse 2"
+      answer_true: "réponse 3"
