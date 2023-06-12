@@ -48,11 +48,11 @@ end
   game = Game.create!(user: user, name: "#{user.pseudo}'s game", level: level.to_s, language: language, status: "started")
   # USERGAME CREATOR
   UserGame.create!(user: user, game: game, score: (0..100).to_a.sample, step: 4, avatar: UserGame::AVATAR_URL.sample)
-  game.update(status: "started")
-  # USERGAME JOINEUR
-  UserGame.create!(user: User.all.reject{|u|u == User.first}.sample, game: game, score: (0..100).to_a.sample, step: 4, avatar: UserGame::AVATAR_URL.sample)
   # Game QCMS
   5.times do
     GameQcm.create!(game: game, qcm: Qcm.where(level: level, language: language).sample)
   end
+  # USERGAME JOINEUR
+  UserGame.create!(user: User.all.reject{|u|u == User.first}.sample, game: game, score: (0..100).to_a.sample, step: 4, avatar: UserGame::AVATAR_URL.sample)
+  game.update!(status: "finished")
 end

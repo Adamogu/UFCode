@@ -27,7 +27,7 @@ class GamesController < ApplicationController
 
   def avatar
     @game = Game.find(params[:id])
-    @user_game = UserGame.create(game: @game, user: current_user)
+    @user_game = UserGame.create!(game: @game, user: current_user)
     redirect_to user_game_path(@user_game)
   end
 

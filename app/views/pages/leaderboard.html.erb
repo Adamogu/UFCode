@@ -4,26 +4,28 @@
   <div class="col-3 mb-3 text-end">LEVEL</div>
   <div class="col-3 mb-3 text-end">POINTS</div>
   <% rank = 1 %>
-  <% @users.ranked.each do |user| %>
-    <div class="row mb-2">
-      <%# RANK %>
-      <div class="col-2"><%= rank %></div>
-      <%# PSEUDO %>
-      <div class="col-4">
-        <% if user.user_games.last&.avatar.present? %>
-          <%= image_tag user.user_games.last.avatar, class: "avatar-small mx-2" %>
-        <% else %>
-          <%= image_tag "fighter_avatar.png", class: "avatar-small mx-2" %>
-        <% end %>
-        <%= user.pseudo %>
+  <div class="height-leaderboard">
+    <% @users.ranked.each do |user| %>
+      <div class="row mb-2">
+        <%# RANK %>
+        <div class="col-2"><%= rank %></div>
+        <%# PSEUDO %>
+        <div class="col-4">
+          <% if user.user_games.last&.avatar.present? %>
+            <%= image_tag user.user_games.last.avatar, class: "avatar-small mx-2" %>
+          <% else %>
+            <%= image_tag "fighter_avatar.png", class: "avatar-small mx-2" %>
+          <% end %>
+          <%= user.pseudo %>
+        </div>
+        <%# LEVEL %>
+        <div class="col-3 text-end">
+          <%= user.highest_level.nil? ? '-' : user.highest_level %>
+        </div>
+        <%# POINTS %>
+        <div class="col-3 text-end"><%= user.computed_score %></div>
+        <% rank += 1  %>
       </div>
-      <%# LEVEL %>
-      <div class="col-3 text-end">
-        <%= user.highest_level.nil? ? '-' : user.highest_level %>
-      </div>
-      <%# POINTS %>
-      <div class="col-3 text-end"><%= user.computed_score %></div>
-      <% rank += 1  %>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

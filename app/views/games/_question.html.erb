@@ -1,3 +1,5 @@
+<%= render "games/progress_bar", game: @game %>
+
 <div data-controller="question">
   <div class="question-title" data-question-target="title">
     <%= qcm.question %>
@@ -11,7 +13,6 @@
   <div class="question  mt-2" data-question-target="question" data-action="click->swap#swap" data-correct="true">
     <%= qcm.answer_true %>
   </div>
-
 </div>
 
 

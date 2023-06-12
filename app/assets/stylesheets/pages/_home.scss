@@ -16,28 +16,12 @@
   border: 1px solid white;
 }
 
-.score {
-  margin-top: 50px;
-  text-align: center;
-  font-size: 24px;
-  position: relative;
-}
-
 .banner p {
   font-size: 18px;
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
-
-
-.title {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 20px;
-}
-
 
 .navbar {
   position: absolute;
@@ -91,21 +75,14 @@ height: calc(100vh - 56px);
   width: 100%;
   display: flex;
   justify-content: center;
-
 }
 
 .left-gif {
-  position: absolute;
-  left: 250px;
-  top: 50%;
-  transform: translateY(-50%);
+  height: 60vh;
+  align-self: flex-end;
 }
 
 .right-gif {
-  margin: -30px;
-  position: absolute;
-  right: 250px;
-  top: 55%;
-  transform: translateY(-50%);
-  margin-right: -10px;
+  height: 60vh;
+  align-self: flex-end;
 }

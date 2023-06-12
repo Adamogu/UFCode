@@ -7,8 +7,8 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-brand {
+  display: flex;
 }
 
 .navbar .container-fluid h1 {

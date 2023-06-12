@@ -2,7 +2,7 @@ class UserGame < ApplicationRecord
   belongs_to :user
   belongs_to :game
 
-  after_save :update_status
+  after_save :update_game_status
 
   AVATAR_URL = ["Avatar1.png", "Avatar2.png", "Avatar3.png",
                 "Avatar4.png","Avatar5.png","Avatar6.png","Avatar7.png",
@@ -11,7 +11,7 @@ class UserGame < ApplicationRecord
                 
   private
 
-  def update_status
+  def update_game_status
     game.update(status: "started") if game.users.count == 2
   end
 
