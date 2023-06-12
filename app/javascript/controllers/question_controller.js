@@ -1,28 +1,19 @@
-// Dans le fichier question_controller.js
-// import { Controller } from "stimulus"
+import { Controller } from "@hotwired/stimulus"
 
-// export default class extends Controller {
-//   static targets = ["question"]
+// Connects to data-controller="question"
+export default class extends Controller {
+  static targets = ["title", "question"]
 
-//   connect() {
-//     this.questionTargets.forEach((questionElement) => {
-//       questionElement.addEventListener("click", this.handleQuestionClick)
-//     })
-//   }
+  connect() {
+    setTimeout(() => {
+      this.titleTarget.classList.add('show');
+    }, 300);
 
-//   disconnect() {
-//     this.questionTargets.forEach((questionElement) => {
-//       questionElement.removeEventListener("click", this.handleQuestionClick)
-//     })
-//   }
+    this.questionTargets.forEach((question, index) => {
+      setTimeout(() => {
+        question.classList.add('show');
+      }, (index + 1) * 300);
+    });
+  }
+}
 
-//   handleQuestionClick(event) {
-//     const questionElements = this.questionTargets
-
-//     questionElements.forEach((element) => {
-//       element.classList.remove("selected")
-//     })
-
-//     event.currentTarget.classList.add("selected")
-//   }
-// }
