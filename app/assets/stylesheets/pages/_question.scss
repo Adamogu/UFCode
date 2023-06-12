@@ -1,4 +1,4 @@
-.question-title{
+.question-title {
   display: flex;
   justify-content: center;
   font-size: 30px;
@@ -9,7 +9,7 @@
   transition: all ease-in-out 0.3s;
 }
 
-.question{
+.question {
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -22,9 +22,19 @@
   margin-right: 0.6rem;
   margin: 1rem;
   transition: all ease-in-out 0.3s;
+  animation: fade-in 0.5s ease-in-out forwards;
+  animation-delay: 1s; /* Ajout du délai d'1 seconde */
+  opacity: 0; /* Masque les questions au départ */
 }
+
 .question:hover {
   background-color: #000;
   color: #fff;
   border-color: #fff;
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
 }

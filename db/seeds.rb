@@ -20,7 +20,7 @@ user2 = User.create!(
 user3 = User.create!(
   email: 'stanislas.zablocki@gmail.com',
   password: '123456',
-  pseudo: 'FunkyDaddy'
+  pseudo: 'FunkyMaster1481'
 )
 
 # Niveau 1 - HTML
@@ -143,4 +143,3 @@ Qcm.create(
   language: "Ruby",
   level: 3
 )
-

@@ -13,4 +13,8 @@ class UserGame < ApplicationRecord
   def update_status
     game.update(status: "started") if game.users.count == 2
   end
+
+  def computed_score
+    game_qcms.sum(&:score)
+  end
 end
