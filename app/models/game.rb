@@ -10,5 +10,5 @@ end
 
 # STATUS :
 # created : créée mais pas de qcms associées encore donc pas joignable
-# pending : joignable (des qcms associés)
+# joignable : joignable (des qcms associés)
 # started : join par 2 personnes (2 users games associés)
