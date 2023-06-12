@@ -9,7 +9,12 @@
       <%# RANK %>
       <div class="col-2"><%= rank %></div>
       <%# PSEUDO %>
-      <div class="col-4"><%= image_tag user.user_games.last.avatar, class: "avatar-small mx-2" %><%= user.pseudo %></div>
+      <div class="col-4">
+        <% if user.user_games.last&.avatar.present? %>
+          <%= image_tag user.user_games.last.avatar, class: "avatar-small mx-2" %>
+        <% end %>
+        <%= user.pseudo %>
+      </div>
       <%# LEVEL %>
       <div class="col-3 text-end"><%= user.highest_level %></div>
       <%# POINTS %>

@@ -1,35 +1,238 @@
 ruby:
   level_1:
     question:
-      name: "COUCOU"
-      answer_one: "réponse 1"
-      answer_two: "réponse 2"
-      answer_true: "réponse 3"
+      name: "Quel mot-clé est utilisé pour définir une méthode en Ruby ?",
+      answer_one: "function",
+      answer_two: "method",
+      answer_true: "def",
     question:
-      name: "COUCOU"
-      answer_one: "réponse 1"
-      answer_two: "réponse 2"
-      answer_true: "réponse 3"
+      name: "Quel est le symbole utilisé pour ajouter des éléments à un tableau en Ruby ?",
+      answer_one: "+=",
+      answer_two: ">>",
+      answer_true: "<<",
+    question:
+      name:  "Quelle est la méthode utilisée pour afficher du texte dans la console en Ruby ?"
+      answer_one: "print"
+      answer_two: "display"
+      answer_true: "puts"
+    question:
+      name:  "Quelle est la méthode utilisée pour obtenir la longueur d'une chaîne de caractères en Ruby ?"
+      answer_one: ".size"
+      answer_two: ".quantity"
+      answer_true: ".length"
+    question:
+      name:  "Quelle est la méthode utilisée pour convertir une chaîne de caractères en entier (integer) en Ruby ?"
+      answer_one: "to_int"
+      answer_two: "parse_int"
+      answer_true: "to_i"
   level_2:
     question:
-      name: "COUCOU"
-      answer_one: "réponse 1"
-      answer_two: "réponse 2"
-      answer_true: "réponse 3"
+      name: "Quelle est la méthode utilisée pour ajouter un élément à la fin d'un tableau en Ruby ?",
+      answer_one: "add",
+      answer_two: "append",
+      answer_true: "push",
     question:
-      name: "COUCOU"
-      answer_one: "réponse 1"
-      answer_two: "réponse 2"
-      answer_true: "réponse 3"      
+      name: "Quelle est la méthode utilisée pour inverser l'ordre des éléments dans un tableau en Ruby ?",
+      answer_one: "flip",
+      answer_two: "invert",
+      answer_true: "reverse",
+    question:
+      name: "Quelle méthode est utilisée pour transformer tous les caractères d'une chaîne en majuscules en Ruby ?"
+      answer_one: "uppercase"
+      answer_two: "capitalize"
+      answer_true: "upcase"
+    question:
+      name: "Quelle méthode permet de fusionner deux tableaux en un seul tableau en Ruby ?"
+      answer_one: "combine"
+      answer_two: "merge"
+      answer_true: "concat"
+    question:
+      name:  "Quelle méthode permet de supprimer les doublons d'un tableau en Ruby ?"
+      answer_one: "remove_duplicates"
+      answer_two: "distinct"
+      answer_true: "uniq!"
+level_3:
+    question:
+      name:  "Quelle méthode permet de convertir une chaîne de caractères en un tableau de caractères individuels en Ruby ?",
+      answer_one: "split",
+      answer_two: "character",
+      answer_true: "each_char",
+    question:
+      name: "Quelle est la différence entre 'include?' et 'member?' en Ruby ?",
+      answer_one: "include? = présence dans une collection, member? = présence dans un module.",
+      answer_two: "include? = membre d'un module, member? = présence dans une collection.",
+      answer_true: "include? = collection, member? = alias d'include?",
+    question:
+      name: "Quelle méthode permet d'exécuter une fonction donnée sur chaque élément d'un tableau en Ruby ?"
+      answer_one: ".execute"
+      answer_two: ".for_each"
+      answer_true: ".each"
+    question:
+      name:  "Quelle méthode permet de vérifier si tous les éléments d'un tableau satisfont une condition donnée en Ruby ?"
+      answer_one:  ".every"
+      answer_two: ".check"
+      answer_true: ".all?"
+    question:
+      name:  "Quelle méthode permet de regrouper les éléments d'un tableau en fonction d'une condition donnée en Ruby ?"
+      answer_one: ".group"
+      answer_two: ".collect"
+      answer_true: ".group_by"
 html:
   level_1:
     question:
-      name: "COUCOU"
-      answer_one: "réponse 1"
-      answer_two: "réponse 2"
-      answer_true: "réponse 3"
+      name: "Qu'est-ce que HTML signifie ?",
+      answer_one: "HyperLink and Text Markup Language",
+      answer_two: "Highly Technical Markup Language",
+      answer_true: "HyperText Markup Language",
     question:
-      name: "COUCOU"
-      answer_one: "réponse 1"
-      answer_two: "réponse 2"
-      answer_true: "réponse 3"
+      name: "Quelle balise est utilisée pour créer un lien hypertexte ?",
+      answer_one: "<link>",
+      answer_two: "<href>",
+      answer_true: "<a>",
+    question:
+      name: "Quelle balise HTML est utilisée pour définir un titre de page ?"
+      answer_one: "<title>"
+      answer_two: "<head>"
+      answer_true: "<h1>"
+    question:
+      name: "Quelle balise HTML est utilisée pour insérer une image ?"
+      answer_one: "<img>"
+      answer_two: "<src>"
+      answer_true: "<img>"
+    question:
+      name: "Quelle balise HTML est utilisée pour créer une liste non ordonnée ?"
+      answer_one: "<ol>"
+      answer_two: "<li>"
+      answer_true: "<ul>"
+  level_2:
+    question:
+      name: "Quelle balise est utilisée pour créer un tableau en HTML ?",
+      answer_one: "<tab>",
+      answer_two: "<grid>",
+      answer_true: "<table>",
+    question:
+      name:  "Quelle est la différence entre les balises <div> et <span> en HTML ?",
+      answer_one: "Aucune, ce sont des balises équivalentes.",
+      answer_two: "La balise <div> est utilisée pour les conteneurs de blocs, tandis que la balise <span> est utilisée pour les conteneurs de lignes.",
+      answer_true: "La balise <div> est utilisée pour les conteneurs de blocs, tandis que la balise <span> est utilisée pour les conteneurs de texte en ligne.",
+    question:
+      name: "Quelle balise HTML est utilisée pour créer un formulaire ?"
+      answer_one: "<input>"
+      answer_two: "<formular>"
+      answer_true: "<form>"
+    question:
+      name: "Quelle balise HTML est utilisée pour définir une section de navigation ?"
+      answer_one: "<navbar>"
+      answer_two: "<header>"
+      answer_true: "<nav>"
+    question:
+      name: "Quelle balise HTML est utilisée pour créer un lien vers une feuille de style CSS externe ?"
+      answer_one: "<require>"
+      answer_two: "<style>"
+      answer_true: "<link>"
+level_3:
+    question:
+      name: "Quelle est la différence entre les balises <article> et <section> en HTML ?",
+      answer_one: "<article> est utilisé pour représenter un contenu dépendant et distribuable, tandis que <section> est utilisé pour séparer des contenus thématiques.",
+      answer_two: "<article> est utilisé pour les articles de blog, tandis que <section> est utilisé pour les sections génériques.",
+      answer_true: "<article> est utilisé pour le contenu réutilisable et indépendant, tandis que <section> est utilisé pour les sections thématiques de contenu.",
+    question:
+      name:  "Quelle balise HTML est utilisée pour représenter une définition de terme ?",
+      answer_one: "<dft>",
+      answer_two: "<dof>",
+      nswer_true: "<dfn>",
+    question:
+      name: "Quelle balise HTML est utilisée pour définir une légende pour un élément multimédia ?"
+      answer_one: "<caption>"
+      answer_two: "<legend>"
+      answer_true: "<figcaption>"
+    question:
+      name: "Quelle balise HTML est utilisée pour créer une zone de texte multiligne ?"
+      answer_one: "<input type='text'>"
+      answer_two: "<textfield>"
+      answer_true: "<textarea>"
+    question:
+      name: "Quelle balise HTML est utilisée pour insérer une vidéo dans une page web ?"
+      answer_one: "<movie>"
+      answer_two: "<video>"
+      answer_true: "<iframe>"
+javascript:
+  level_1:
+    question:
+      name: "Quelle est la méthode utilisée pour afficher un message dans la console du navigateur ?"
+      answer_one: "console.print"
+      answer_two: "console.display"
+      answer_true: "console.log"
+    question:
+      name: "Quelle est la façon correcte de déclarer une variable en JavaScript ?"
+      answer_one: "variable x"
+      answer_two: "x = variable"
+      answer_true: "var x"
+    question:
+      name: "Quelle méthode est utilisée pour ajouter un élément à la fin d'un tableau en JavaScript ?"
+      answer_one: "add"
+      answer_two: "append"
+      answer_true: "push"
+    question:
+      name: "Quelle est la méthode utilisée pour sélectionner un élément HTML par son ID en JavaScript ?"
+      answer_one: "getElementByTag"
+      answer_two: "querySelector"
+      answer_true: "getElementById"
+    question:
+      name: "Quelle méthode permet de vérifier si une variable est de type tableau (array) en JavaScript ?"
+      answer_one: "isArray"
+      answer_two: "isTypeOf('array')"
+      answer_true: "Array.isArray"
+  level_2:
+    question:
+      name: "Quelle méthode permet de vérifier si un élément existe dans un tableau en JavaScript ?"
+      answer_one: "find"
+      answer_two: "indexOf"
+      answer_true: "includes"
+    question:
+      name: "Quelle méthode permet de supprimer le dernier élément d'un tableau en JavaScript ?"
+      answer_one: "remove"
+      answer_two: "delete"
+      answer_true: "pop"
+    question:
+      name: "Quelle méthode permet de transformer tous les éléments d'un tableau en minuscules en JavaScript ?"
+      answer_one: "tolowercase"
+      answer_two: "map"
+      answer_true: "toLowerCase"
+    question:
+      name: "Quelle méthode est utilisée pour ajouter des éléments au début d'un tableau en JavaScript ?"
+      answer_one: "prepend"
+      answer_two: "shift"
+      answer_true: "unshift"
+    question:
+      name: "Quelle méthode permet de retourner une sous-section d'un tableau en JavaScript ?"
+      answer_one: "cut"
+      answer_two: "subset"
+      answer_true: "slice"
+level_3:
+    question:
+      name: "Quelle méthode permet de trier les éléments d'un tableau en JavaScript en utilisant une fonction de comparaison personnalisée ?"
+      answer_one: "groupby"
+      answer_two: "order"
+      answer_true: "sort"
+    question:
+      name: "Quelle méthode permet de fusionner plusieurs tableaux en un seul tableau en JavaScript ?"
+      answer_one: "concat"
+      answer_two: "merge"
+      answer_true: "concat"
+    question:
+      name: "Quelle méthode permet d'exécuter une fonction donnée sur chaque élément d'un tableau en JavaScript ?"
+      answer_one: "execute"
+      answer_two: "each"
+      answer_true: "forEach"
+    question:
+      name:  "Quelle méthode permet de créer une copie superficielle d'un objet en JavaScript ?"
+      answer_one: "clone"
+      answer_two: "copy"
+      answer_true: "Object.assign"
+    question:
+      name: "Quelle méthode permet de vérifier si tous les éléments d'un tableau satisfont une condition donnée en JavaScript ?"
+      answer_one: "all"
+      answer_two: "check"
+      answer_true: "every"
+>>>>>>> master
