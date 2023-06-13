@@ -1,22 +1,31 @@
-<div data-game-target= "result" class="container">
+<div class="container">
   <h2 style="font-family: 'Press Start 2P', cursive; margin-top: -50px; color: white;">Your Score</h2>
   <div class="d-flex align-items-center justify-content-center">
     <% game.users.each do |user| %>
       <% if user.user_games.find_by(game: game).step < 5 %>
-      <div class="d-flex align-items-center flex-column p-3 m-3 bg-black rounded">
-        <p>Still waiting on your oponent !</p>
-      </div>
+        <div class="d-flex align-items-center flex-column p-3 m-3 bg-black rounded">
+          <p>Still waiting on your opponent!</p>
+        </div>
       <% else %>
         <div class="d-flex align-items-center flex-column p-3 m-3 bg-black rounded">
           <div class="d-flex">
             <p class="mx-2"><%= user.pseudo %></p>
-            <%= image_tag user.user_games.find_by(game: game).avatar, class: "avatar-small mb-3" %>
+            <% if user.ejected? %>
+              <%= image_tag user.user_games.find_by(game: game).avatar, class: "avatar-small mb-3 ejected" %>
+            <% else %>
+              <%= image_tag user.user_games.find_by(game: game).avatar, class: "avatar-small mb-3 winner" %>
+            <% end %>
           </div>
-          <h4><%= user.user_games.find_by(game: game).score %> / <%= 10*5*@game.level.to_i %></h4>
+          <h4><%= user.user_games.find_by(game: game).score %> / <%= 10 * 5 * @game.level.to_i %></h4>
         </div>
       <% end %>
     <% end %>
   </div>
 </div>
 
-<%# <%= javascript_include_tag 'score-animation' %>
+<script>
+  setTimeout(() => {
+    console.log(document.querySelector('.ejected'))
+    document.querySelector('.ejected').style.opacity = "0";
+  }, 2000);
+</script>
