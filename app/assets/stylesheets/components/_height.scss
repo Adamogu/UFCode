@@ -1,0 +1,19 @@
+.height-leaderboard {
+  height: 60vh;
+  overflow: hidden;
+}
+
+#infinite-scroll-div {
+  width: 50vw;
+  font-size: 13px !important;
+  animation: slide 15s linear infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-800px, 0, 0);
+  }
+}
