@@ -78,11 +78,20 @@ height: calc(100vh - 56px);
 }
 
 .left-gif {
-  height: 60vh;
-  align-self: flex-end;
+  width: 150px;
+  position: absolute;
+  left: 580px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .right-gif {
-  height: 60vh;
-  align-self: flex-end;
+  width: 133px;
+  margin: -30px;
+  position: absolute;
+  right: 580px;
+  top: 54%;
+  transform: translateY(-50%);
+  margin-right: -10px;
 }
+
