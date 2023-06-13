@@ -1,9 +1,14 @@
 <div data-controller="game" data-game-game-id-value="<%= @game.id %>">
   <%= audio_tag "sound-fight.mp3", id: "game-start-audio" %>
   <% if @game.user_games.count < 2 %>
-    <div data-controller="game" data-game-game-id-value="<%= @game.id %>">
+    <div class="opponent" data-controller="game" data-game-game-id-value="<%= @game.id %>">
       Waiting For Opponent
     </div>
+
+    <div class="ring">Loading
+      <span class="wheel"></span>
+    </div>
+
   <% else %>
     <div id="timer">
       <script>
