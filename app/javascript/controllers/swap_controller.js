@@ -17,6 +17,7 @@ export default class extends Controller {
     .then(response => response.json())
     .then((data) => {
       this.element.innerHTML = data.html;
+
     })
   }
 }

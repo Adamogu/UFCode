@@ -52,3 +52,29 @@
   padding: 7px 19px 4px 22px;
   border-radius: 4px;
 }
+
+.avatar-small.ejected {
+  animation: hinge 2s ease;
+
+  // transform: translate3d(-50vmin, -20vmin, 0px) rotate(0turn);
+}
+
+.winner {
+  z-index: 100;
+  animation: bounce2 2s ease infinite;
+
+}
+
+@keyframes hinge {
+  0% { transform: rotate(0); transform-origin: top left; animation-timing-function: ease-in-out; }
+  20%, 60% { transform: rotate(80deg); transform-origin: top left; animation-timing-function: ease-in-out; }
+  40% { transform: rotate(60deg); transform-origin: top left; animation-timing-function: ease-in-out; }
+  80% { transform: rotate(60deg) translateY(0); opacity: 1; transform-origin: top left; animation-timing-function: ease-in-out; }
+  100% { transform: translateY(700px); opacity: 0; }
+}
+
+@keyframes bounce2 {
+	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+	40% {transform: translateY(-30px);}
+	60% {transform: translateY(-15px);}
+}

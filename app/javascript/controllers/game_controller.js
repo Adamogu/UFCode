@@ -10,10 +10,8 @@ export default class extends Controller {
       { channel: "GameChannel", id: this.gameIdValue },
       {
         received: data => {
+          window.location.href = window.location.href
          const json = JSON.parse(data)
-          // console.log("received", data)
-          console.log("json", json)
-
           if (json.user_joined === true) {
             window.location.href = window.location.href
           } else if (json.user_answered) {
@@ -30,4 +28,14 @@ export default class extends Controller {
     )
     console.log(`Subscribed to the waitingroom with the id ${this.gameIdValue}.`)
   }
+  // findUserElement(userId) {
+  //   const userElements = this.userGameTargets
+  //   for (let i = 0; i < userElements.length; i++) {
+  //     const userElement = userElements[i]
+  //     if (userElement.dataset.userId == userId) {
+  //       return userElement
+  //     }
+  //   }
+  //   return null
+  // }
 }
