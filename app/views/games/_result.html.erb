@@ -1,39 +1,42 @@
 <div class="container">
   <h2 style="font-family: 'Press Start 2P', cursive; margin-top: -50px; color: white;">Your Score</h2>
   <div class="d-flex align-items-center justify-content-center">
-    <div class="left-gif2-container">
-      <%= image_tag "ryu-twist.gif", alt: "Gif 1", class: "left-gif2", id: "test-1" %>
-    </div>
     <% game.users.each do |user| %>
       <% if user.user_games.find_by(game: game).step < 5 %>
         <div class="d-flex align-items-center flex-column p-3 m-3 bg-black rounded">
           <p>Still waiting on your opponent!</p>
         </div>
       <% else %>
-        <div class="d-flex align-items-center flex-column p-3 m-3 bg-black rounded">
+        <div class="d-flex align-items-center flex-column p-3 m-3">
           <div class="d-flex">
             <p class="mx-2"><%= user.pseudo %></p>
             <% if user.ejected? %>
               <div class="avatar-container">
-                <%= image_tag user.user_games.find_by(game: game).avatar, class: "avatar-small mb-3" %>
-                <%= image_tag "ryu-twist.gif", alt: "Eject GIF", class: "eject-gif" %>
+                <%= image_tag user.user_games.find_by(game: game).avatar, class: "avatar-small mb-3 ejected" %>
               </div>
             <% else %>
               <div class="avatar-container">
-                <%= image_tag user.user_games.find_by(game: game).avatar, class: "avatar-small mb-3" %>
-                <%= image_tag "ken-sfa-win.gif", alt: "Winner GIF", class: "winner-gif" %>
+                <%= image_tag user.user_games.find_by(game: game).avatar, class: "avatar-small mb-3 winner" %>
               </div>
             <% end %>
           </div>
           <h4><%= user.user_games.find_by(game: game).score %> / <%= 10 * 5 * @game.level.to_i %></h4>
         </div>
+        <% if user.ejected? %>
+          <div class="left-gif2-container">
+            <%= image_tag "ryu-twist.gif", alt: "Eject GIF", class: "left-gif2" %>
+          </div>
+        <% else %>
+          <div class="right-gif2-container">
+            <%= image_tag "ken-sfa-win.gif", alt: "Winner GIF", class: "right-gif2" %>
+          </div>
+        <% end %>
       <% end %>
     <% end %>
   </div>
-  <div class="right-gif2-container">
-    <%= image_tag "ken-sfa-win.gif", alt: "Gif 2", class: "right-gif2", id: "test-2" %>
-  </div>
 </div>
+
+
 
 <script>
   setTimeout(() => {

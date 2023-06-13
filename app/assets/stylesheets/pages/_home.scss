@@ -101,8 +101,8 @@ height: calc(100vh - 56px);
 .left-gif2 {
   position: absolute;
   top: 0;
-  left: 0;
-  z-index: -1;
+  left: -400px;
+  z-index: 1;
 }
 
 .right-gif2-container {
@@ -112,6 +112,18 @@ height: calc(100vh - 56px);
 .right-gif2 {
   position: absolute;
   top: 0;
-  right: 0;
-  z-index: -1;
+  right: -150px;
+  z-index: 1;
+}
+
+/* Exemple de positionnement pour le gagnant */
+.left-gif2-container.winner-gif {
+  top: 0;
+  left: 150px;
+}
+
+/* Exemple de positionnement pour le perdant */
+.right-gif2-container.eject-gif {
+  top: 0;
+  right: 100px;
 }
