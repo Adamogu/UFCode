@@ -45,8 +45,9 @@ class UserGamesController < ApplicationController
 
     respond_to do |format|
       if @user_game.step >= @user_game.game.qcms.count
-        if @user_game.game.user_games.all? { |u| u.step >= 5 }
+        if @game.user_games.all? { |u| u.step >= 5 }
           @game.update(status: "finished")
+          determine_loser_and_apply_effect(@game)
           GameChannel.broadcast_to(
             @user_game.game,
             { user_finished: render_to_string(partial: "games/result", locals: {user_game: @user_game, game: @game}, formats: [:html]) }.to_json
@@ -64,6 +65,13 @@ class UserGamesController < ApplicationController
   end
 
   private
+
+  def determine_loser_and_apply_effect(game)
+    @user_games = game.user_games.sort_by(&:score)
+    @loser = @user_games.first.user
+    @winner = @user_games.last.user
+    @loser.update!(ejected: true)
+  end
 
   def user_game_params
     params.require(:user_game).permit(:avatar)
