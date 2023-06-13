@@ -1,8 +1,8 @@
 <div class="buttons-container text-center w-100 justify-content-evenly">
-  <img src="/assets/test-1.gif" alt="Gif 1" class="left-gif" id="test-1">
+  <%= image_tag "test-1.gif", alt: "Gif 1", class: "left-gif", id: "test-1" %>
   <div>
     <%= link_to "Start Game", games_path(@game), data: { turbo_method: :post, turbo_frame: "game" }, class: "button create-button mb-5", id: "start-game-button" %>
     <%= link_to "Join Game", games_path, class: "button join-button" %>
   </div>
-  <img src="/assets/test-2.gif" alt="Gif 2" class="right-gif" id="test-2">
+  <%= image_tag "test-2.gif", alt: "Gif 2", class: "right-gif", id: "test-2" %>
 </div>
