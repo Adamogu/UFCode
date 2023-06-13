@@ -78,20 +78,19 @@ height: calc(100vh - 56px);
 }
 
 .left-gif {
-  width: 150px;
+  width: 120px;
   position: absolute;
-  left: 580px;
+  left: 220px;
   top: 50%;
   transform: translateY(-50%);
 }
 
 .right-gif {
-  width: 133px;
+  width: 105px;
   margin: -30px;
   position: absolute;
-  right: 580px;
+  right: 220px;
   top: 54%;
   transform: translateY(-50%);
   margin-right: -10px;
 }
-
