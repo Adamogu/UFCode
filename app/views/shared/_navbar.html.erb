@@ -5,17 +5,17 @@
     <% end %>
 
     <% if action_name == "show" && controller_name == "games" && @game.user_games.find_by(user: current_user).step < 5 && @game.status == "started" %>
-      <div id="timer"></div>
+      <div id="timer" data-controller="timer"></div>
     <% else %>
       <div class="overflow-hidden">
         <div class="text-white d-flex" id="infinite-scroll-div">
           <% rank = 1 %>
-          <% User.all.each do |user| %>
+          <% User.all.ranked.each do |user| %>
             <div class="d-flex align-items-center justify-content-center flex-nowrap mx-4" style="white-space: nowrap;"><%= rank %> - <%= user.pseudo %>(<%= user.computed_score %> pts)</div>
             <% rank += 1 %>
           <% end %>
         </div>
-      </div>  
+      </div>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,8 +48,8 @@
 </div>
 
 
-<script>
-  const departMinutes = 0
+<%# <script>
+  let departMinutes = 0
   let temps = departMinutes * 60
   const timerElement = document.getElementById("timer")
 
@@ -59,9 +59,10 @@
 
     minutes = minutes < 10 ? "0" + minutes : minutes
     secondes = secondes < 10 ? "0" + secondes : secondes
-
-    timerElement.innerText = `${minutes}:${secondes}`
-    temps = temps + 1
+    if (timerElement) {
+      timerElement.innerText = `${minutes}:${secondes}`
+      temps = temps + 1
+    }
 
   }, 1000)
-</script>
+</script> %>
