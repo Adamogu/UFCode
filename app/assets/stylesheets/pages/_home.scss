@@ -94,3 +94,24 @@ height: calc(100vh - 56px);
   transform: translateY(-50%);
   margin-right: -10px;
 }
+.left-gif2-container {
+  position: relative;
+}
+
+.left-gif2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.right-gif2-container {
+  position: relative;
+}
+
+.right-gif2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
