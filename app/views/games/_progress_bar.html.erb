@@ -1,4 +1,4 @@
-<div class="d-flex mx-auto w-100 align-items-center justify-content-center">
+<div data-game-target="progress" class="d-flex mx-auto w-100 align-items-center justify-content-center">
   <%# FIRST USER %>
   <%= image_tag game.user_games.first.avatar, class: "avatar-small" %>
   <div class="d-flex mx-3">
@@ -7,7 +7,7 @@
     <% end %>
     <% (5 - (game.user_games.first.score/10)/game.level.to_i).times do %>
       <div class="px-3 py-2 bg-secondary"></div>
-    <% end %>      
+    <% end %>
   </div>
   <%# SECOND USER %>
   <div class="d-flex mx-3">
@@ -16,7 +16,7 @@
     <% end %>
     <% (5 - (game.user_games.last.score/10)/game.level.to_i).times do %>
       <div class="px-3 py-2 bg-secondary"></div>
-    <% end %>      
+    <% end %>
   </div>
   <%= image_tag game.user_games.last.avatar, class: "avatar-small" %>
 </div>

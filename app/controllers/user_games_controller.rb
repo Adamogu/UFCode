@@ -12,7 +12,7 @@ class UserGamesController < ApplicationController
       if @user_game.game.user_games.count == 2
         GameChannel.broadcast_to(
           @user_game.game,
-          "toto pouet son string"
+          { user_joined: true }.to_json
         )
         redirect_to game_path(@user_game.game)
       else
@@ -35,6 +35,11 @@ class UserGamesController < ApplicationController
     @user_game.save
     @game = @user_game.game
 
+    GameChannel.broadcast_to(
+      @user_game.game,
+      { user_answered: render_to_string(partial: "games/progress_bar", locals: {game: @game}, formats: [:html]) }.to_json
+    )
+
     # stocker la question suivante
     @qcm = @user_game.game.qcms[@user_game.step]
 
@@ -43,6 +48,10 @@ class UserGamesController < ApplicationController
         if @game.user_games.all? { |u| u.step >= 5 }
           @game.update(status: "finished")
           determine_loser_and_apply_effect(@game)
+          GameChannel.broadcast_to(
+            @user_game.game,
+            { user_finished: render_to_string(partial: "games/result", locals: {user_game: @user_game, game: @game}, formats: [:html]) }.to_json
+          )
         end
         format.json { render json: {
           html: render_to_string(partial: "games/result", locals: {user_game: @user_game, game: @game}, formats: [:html]) }
