@@ -4,7 +4,6 @@
     Waiting For Opponent
   </div>
 <% else %>
-
   <div id="timer">
     <script>
       const departMinutes = 1
@@ -37,7 +36,7 @@
     </script>
   </div>
   <div>
-    <% if @game.user_games.find_by(user: current_user).step == 5 %>
+    <% if @game.user_games.find_by(user: current_user).step >= 5 %>
       <%= render "result", game: @game %>
     <% else %>
     <ul data-controller="swap" data-user-game="<%= @user_game.id %>">
