@@ -10,7 +10,7 @@ export default class extends Controller {
       { channel: "GameChannel", id: this.gameIdValue },
       {
         received: data => {
-          window.location.href = window.location.href
+          
          const json = JSON.parse(data)
           if (json.user_joined === true) {
             window.location.href = window.location.href
