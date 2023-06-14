@@ -19,7 +19,7 @@
               <h4><%= user.user_games.find_by(game: game).score %> / <%= 10 * 5 * @game.level.to_i %></h4>
             </div>
             <div class="left-gif2-container">
-              <%= image_tag "ryu-twist.gif", alt: "Eject GIF", class: "gif-score" %>
+              <%= image_tag asset_path("ryu-twist.gif"), alt: "Eject GIF", class: "gif-score" %>
             </div>
           </div>
         <% else %>
@@ -34,7 +34,7 @@
               <h4><%= user.user_games.find_by(game: game).score %> / <%= 10 * 5 * @game.level.to_i %></h4>
             </div>
             <div class="right-gif2-container">
-              <%= image_tag "ken-sfa-win.gif", alt: "Winner GIF", class: "gif-score" %>
+              <%= image_tag asset_path("ken-sfa-win.gif"), alt: "Winner GIF", class: "gif-score" %>
             </div>
           </div>
         <% end %>
