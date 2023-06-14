@@ -27,8 +27,4 @@ class User < ApplicationRecord
     Game.where(id: (created_games | joined_games).map(&:id))
   end
 
-  def ejected?
-    ejected == true
-  end
-
 end
