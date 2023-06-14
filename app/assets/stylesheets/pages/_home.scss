@@ -94,36 +94,40 @@ height: calc(100vh - 56px);
   transform: translateY(-50%);
   margin-right: -10px;
 }
-.left-gif2-container {
-  position: relative;
+// .left-gif2-container {
+//   position: relative;
+// }
+
+.gif-score {
+  min-height: 25vh;
 }
 
-.left-gif2 {
-  position: absolute;
-  top: 0;
-  left: -400px;
-  z-index: 1;
-}
+// .left-gif2 {
+//   position: absolute;
+//   top: 0;
+//   left: -400px;
+//   z-index: 1;
+// }
 
-.right-gif2-container {
-  position: relative;
-}
+// .right-gif2-container {
+//   position: relative;
+// }
 
-.right-gif2 {
-  position: absolute;
-  top: 0;
-  right: -150px;
-  z-index: 1;
-}
+// .right-gif2 {
+//   position: absolute;
+//   top: 0;
+//   right: -150px;
+//   z-index: 1;
+// }
 
 /* Exemple de positionnement pour le gagnant */
-.left-gif2-container.winner-gif {
-  top: 0;
-  left: 150px;
-}
+// .left-gif2-container.winner-gif {
+//   top: 0;
+//   left: 150px;
+// }
 
-/* Exemple de positionnement pour le perdant */
-.right-gif2-container.eject-gif {
-  top: 0;
-  right: 100px;
-}
+// /* Exemple de positionnement pour le perdant */
+// .right-gif2-container.eject-gif {
+//   top: 0;
+//   right: 100px;
+// }
