@@ -4,16 +4,16 @@
   <div class="question-title" data-question-target="title">
     <%= qcm.question %>
   </div>
-  <div class="question  mt-2" data-question-target="question" data-action="click->swap#swap" data-correct="false">
-    <%= qcm.answer_one %>
-  </div>
-  <div class="question  mt-2"data-question-target="question" data-action="click->swap#swap" data-correct="false">
-    <%= qcm.answer_two %>
-  </div>
-  <div class="question  mt-2" data-question-target="question" data-action="click->swap#swap" data-correct="true">
-    <%= qcm.answer_true %>
-  </div>
+
+  <% answers = [qcm.answer_one, qcm.answer_two, qcm.answer_true].shuffle %>
+
+  <% answers.each do |answer| %>
+    <div class="question mt-2" data-question-target="question" data-action="click->swap#swap" data-correct="<%= answer == qcm.answer_true %>">
+      <%= answer %>
+    </div>
+  <% end %>
 </div>
+
 
 
 <%# <script>
