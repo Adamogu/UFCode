@@ -1,0 +1,27 @@
+<div class= "rejoin">
+  <%= link_to game_path(UserGame.where(user: current_user, game: @games.last).last.game) do  %>
+    <div class="btn button-rejoin">Back To Game</div>
+  <% end %>
+</div>
+
+  <div class="row mx-auto w-100">
+    <%# <div class="col-2 mb-3">Past-Game</div> %>
+    <div class="col-4 mb-3 text-center">Level</div>
+    <div class="col-3 mb-3 text-center">Win/Lose</div>
+    <div class="col-3 mb-3 text-center">Points</div>
+    <div class="height-leaderboard">
+      <% @games.order(created_at: :desc).each do |game| %>
+        <div class="row mb-2">
+          <div class="col-4 text-center">
+            <%= game.level %>
+          </div>
+
+          <div class="col-3 text-center">
+            <%= game.winner == current_user ? 'Win' : 'Lose' %>
+          </div>
+          <%# POINTS %>
+          <div class="col-3 text-center"><%= UserGame.where(game: game, user: current_user).first.score %></div>
+        </div>
+      <% end %>
+    <%# </div> %>
+  </div>

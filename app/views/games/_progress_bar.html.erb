@@ -2,7 +2,7 @@
   <%# FIRST USER %>
   <%= image_tag game.user_games.first.avatar, class: "avatar-small" %>
   <div class="d-flex mx-3">
-    <% ((game.user_games.first.score/10)/game.level.to_i).times do %>
+    <% ((game.user_games.first.score / 10)/game.level.to_i).times do %>
       <div class="px-3 py-2 bg-primary"></div>
     <% end %>
     <% (5 - (game.user_games.first.score/10)/game.level.to_i).times do %>

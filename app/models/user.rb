@@ -22,4 +22,8 @@ class User < ApplicationRecord
   def self.ranked
     all.sort_by { |user| -user.computed_score }
   end
+
+  def games
+    Game.where(id: (created_games | joined_games).map(&:id))
+  end
 end

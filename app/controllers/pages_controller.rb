@@ -7,4 +7,8 @@ class PagesController < ApplicationController
   def leaderboard
     @users = User.all
   end
+
+  def profile
+    @games = current_user.games
+  end
 end

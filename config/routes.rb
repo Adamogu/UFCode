@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   end
 
   get "leaderboard", to: "pages#leaderboard"
+  get "profile", to: "pages#profile"
 
   resources :user_games, only: [:show, :update] do
     get "answer", to: "user_games#answer"
