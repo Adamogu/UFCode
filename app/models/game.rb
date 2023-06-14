@@ -5,6 +5,10 @@ class Game < ApplicationRecord
   has_many :users, through: :user_games
   belongs_to :user
   scope :joignable, -> { where(status: 'joignable') }
+
+  def winner
+    user_games.order(score: :asc).map(&:user).first
+  end
 end
 
 # STATUS :

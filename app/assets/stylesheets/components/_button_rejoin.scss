@@ -1,0 +1,44 @@
+.rejoin {
+  width: 100%;
+  margin: 30px 0px 22px;
+}
+
+.button-rejoin {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: whitesmoke;
+  border: none;
+  color: black;
+  text-align: center;
+  font-size: 15px;
+  padding: 20px;
+  width: 150px;
+  transition: all 0.3s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button-rejoin span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button-rejoin span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button-rejoin:hover span {
+  padding-right: 25px;
+}
+
+.button-rejoin:hover span:after {
+  opacity: 1;
+  right: 0;
+}

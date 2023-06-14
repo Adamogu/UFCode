@@ -18,4 +18,13 @@ class User < ApplicationRecord
   def highest_level
     joined_games.pluck(:level).map(&:to_i).max()
   end
+
+  def self.ranked
+    all.sort_by { |user| -user.computed_score }
+  end
+
+  def games
+    Game.where(id: (created_games | joined_games).map(&:id))
+  end
+
 end
