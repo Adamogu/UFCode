@@ -4,17 +4,16 @@
       as: :radio_buttons,
       legend_tag: false,
       label_method: lambda { |cat| render 'languages', cat: cat },
-      input_html: {class: 'category-selector'},
+      input_html: {class: 'category-selector col-4'},
       item_wrapper_class: 'category-item',
       collection_wrapper_tag: 'div',
       collection_wrapper_class: 'category-wrapper',
       collection: Qcm::LANGUAGES %>
   <div class="align-button-center">
-    <%= f.submit 'Select', class: "button create-button" %>
+    <%= f.submit 'Select', class: "button create-button col-4 mb-3" %>
   </div>
 <% end %>
 
 <div>
   <img src="<%= asset_path('test-3.gif') %>" alt="Gif 3" class="gif-language">
 </div>
-

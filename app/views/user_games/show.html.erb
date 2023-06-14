@@ -5,7 +5,7 @@
         as: :radio_buttons,
         legend_tag: false,
         label_method: lambda { |photo| render 'avatar', photo: photo },
-        input_html: { class: "tag-selector" },
+        input_html: { class: "tag-selector col-3" },
         item_wrapper_class: 'tag-item',
         collection: UserGame::AVATAR_URL %>
     <div class="align-button-center">
