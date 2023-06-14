@@ -2,8 +2,8 @@ class User < ApplicationRecord
   has_many :created_games, class_name: 'Game'
   has_many :user_games, dependent: :destroy
   has_many :joined_games, through: :user_games, source: :game
-  # scope :ranked, -> { sort_by { |user| -user.computed_score } }
-  scope :ranked, -> { order(computed_score: :desc) }
+  scope :ranked, -> { sort_by { |user| -user.computed_score } }
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -26,4 +26,5 @@ class User < ApplicationRecord
   def games
     Game.where(id: (created_games | joined_games).map(&:id))
   end
+
 end

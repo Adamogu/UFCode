@@ -1,12 +1,21 @@
 <div id="card-level" class="bg-white rounded p-3 mx-2 badge-level d-flex flex-column justify-content-start">
-    <h5 style="color: white !important;">Level <span class="text-color-<%= level %>"><%= level %></span></h5>
+    <h5 style="color: white !important;">Level <span class="text-color-2"<%= level %>><%= level %></span></h5>
   <div>
     <% if level == 1 %>
-      <p style="color: white !important;">On y va Molo</p>
+      <p style="color: white !important;">
+  On y va Molo
+  <i class="em em-baby_chick" aria-role="presentation" aria-label="BABY CHICK"></i>
+</p>
     <% elsif level == 2 %>
-      <p style="color: white !important;">On commence à être chaud</p>
+    <p style="color: white !important;">
+  Ça commence à chauffer
+  <i class="em em-fire" aria-role="presentation" aria-label="FIRE"></i>
+</p>
     <% else %>
-      <p style="color: white !important;">Le code n'a plus de secret</p>
+    <p style="color: white !important;">
+  Le code n'a plus de secret
+  <i class="em em-crystal_ball" aria-role="presentation" aria-label="CRYSTAL BALL"></i>
+</p>
     <% end %>
   </div>
 </div>
