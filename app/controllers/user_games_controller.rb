@@ -71,6 +71,7 @@ class UserGamesController < ApplicationController
     @loser = @user_games.first.user
     @winner = @user_games.last.user
     @loser.update!(ejected: true)
+    @winner.update!(ejected: false)
   end
 
   def user_game_params

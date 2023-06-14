@@ -1,27 +1,49 @@
-<div data-game-target= "result" class="container">
-  <h2 style="font-family: 'Press Start 2P', cursive; margin-top: -50px; color: white;">Your Score</h2>
-  <div class="d-flex align-items-center justify-content-center">
+<div class="container">
+  <h2 style="font-family: 'Press Start 2P', cursive; margin-top: 140px; color: white;">Your Score</h2>
+  <div class="d-flex align-items-center justify-content-center mt-5">
     <% game.users.each do |user| %>
       <% if user.user_games.find_by(game: game).step < 5 %>
-        <div class="d-flex align-items-center flex-column p-3 m-3 bg-black rounded">
+        <div class="d-flex align-items-center flex-column p-3 m-3">
           <p>Still waiting on your opponent!</p>
         </div>
       <% else %>
-        <div class="d-flex align-items-center flex-column p-3 m-3 bg-black rounded">
-          <div class="d-flex">
-            <p class="mx-2"><%= user.pseudo %></p>
-            <% if user.ejected? %>
-              <%= image_tag user.user_games.find_by(game: game).avatar, class: "avatar-small mb-3 ejected" %>
-            <% else %>
-              <%= image_tag user.user_games.find_by(game: game).avatar, class: "avatar-small mb-3 winner" %>
-            <% end %>
+        <% if user.ejected? %>
+          <div class="d-flex flex-column align-items-center">
+            <div class="d-flex align-items-center flex-column p-3 m-3">
+              <div class="d-flex">
+                <p class="mx-2"><%= user.pseudo %></p>
+                  <div class="avatar-container">
+                    <%= image_tag user.user_games.find_by(game: game).avatar, class: "avatar-small mb-3 ejected" %>
+                  </div>
+              </div>
+              <h4><%= user.user_games.find_by(game: game).score %> / <%= 10 * 5 * @game.level.to_i %></h4>
+            </div>
+            <div class="left-gif2-container">
+              <%= image_tag "ryu-twist.gif", alt: "Eject GIF", class: "gif-score" %>
+            </div>
           </div>
-          <h4><%= user.user_games.find_by(game: game).score %> / <%= 10 * 5 * @game.level.to_i %></h4>
-        </div>
+        <% else %>
+          <div class="d-flex flex-column align-items-center">
+            <div class="d-flex align-items-center flex-column p-3 m-3">
+              <div class="d-flex">
+                <p class="mx-2"><%= user.pseudo %></p>
+                <div class="avatar-container">
+                  <%= image_tag user.user_games.find_by(game: game).avatar, class: "avatar-small mb-3 winner" %>
+                </div>
+              </div>
+              <h4><%= user.user_games.find_by(game: game).score %> / <%= 10 * 5 * @game.level.to_i %></h4>
+            </div>
+            <div class="right-gif2-container">
+              <%= image_tag "ken-sfa-win.gif", alt: "Winner GIF", class: "gif-score" %>
+            </div>
+          </div>
+        <% end %>
       <% end %>
     <% end %>
   </div>
 </div>
+
+
 
 <script>
   setTimeout(() => {
@@ -29,5 +51,4 @@
     document.querySelector('.ejected').style.opacity = "0";
   }, 2000);
 </script>
-
 <%# <%= javascript_include_tag 'score-animation' %>
