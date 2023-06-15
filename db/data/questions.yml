@@ -113,7 +113,7 @@ html:
     - question:  "Quelle balise HTML est utilisée pour représenter une définition de terme ?"
       answer_one: "<dft>"
       answer_two: "<dof>"
-      nswer_true: "<dfn>"
+      answer_true: "<dfn>"
     - question: "Quelle balise HTML est utilisée pour définir une légende pour un élément multimédia ?"
       answer_one: "<caption>"
       answer_two: "<legend>"
