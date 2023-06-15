@@ -1,48 +1,15 @@
 <h1 class="user-games-title mt-5 align-items center">Choose a Fighter</h1>
 <div class="user-games-form-container mt-4 w-75 mx-auto">
-  <%= simple_form_for @user_game do |f| %>
+  <%= simple_form_for @user_game, html: { "data-controller": "selection" } do |f| %>
     <%= f.input :avatar,
         as: :radio_buttons,
         legend_tag: false,
         label_method: lambda { |photo| render 'avatar', photo: photo },
-        input_html: { class: "tag-selector" },
+        input_html: { class: "tag-selector", required: true, "data-selection-target": "radioButton", "data-action": "click->selection#change" },
         item_wrapper_class: 'tag-item col-2 mx-0 d-flex justify-content-center',
         collection: UserGame::AVATAR_URL %>
     <div class="align-button-center">
-      <%= f.submit 'Select', class: "button create-button" %>
+      <%= f.submit 'Select', class: "button create-button", "data-selection-target": "selectButton" %>
     </div>
   <% end %>
 </div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const avatarRadios = document.querySelectorAll('input[name="user_game[avatar]"]');
-    const selectButton = document.querySelector('.create-button');
-
-    // Désactiver le bouton "Select" au chargement de la page
-    selectButton.disabled = true;
-
-    // Vérifier si un avatar est déjà sélectionné au chargement de la page
-    avatarRadios.forEach(function(radio) {
-      if (radio.checked) {
-        selectButton.disabled = false;
-      }
-    });
-
-    // Ajouter un écouteur d'événement à chaque bouton radio d'avatar
-    avatarRadios.forEach(function(radio) {
-      radio.addEventListener('change', function() {
-        // Vérifier si un avatar est sélectionné
-        const selectedAvatar = document.querySelector('input[name="user_game[avatar]"]:checked');
-        if (selectedAvatar) {
-          // Activer le bouton "Select" si un avatar est sélectionné
-          selectButton.disabled = false;
-        } else {
-          // Désactiver le bouton "Select" si aucun avatar n'est sélectionné
-          selectButton.disabled = true;
-        }
-      });
-    });
-  });
-</script>
-

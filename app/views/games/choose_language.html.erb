@@ -1,52 +1,19 @@
 <h1>Choose a language</h1>
-<%= simple_form_for :qcm, url: game_choose_level_path(@game), method: :get  do |f| %>
+<%= simple_form_for :qcm, url: game_choose_level_path(@game), html: { "data-controller": "selection" }, method: :get  do |f| %>
   <%= f.input :languages,
       as: :radio_buttons,
       legend_tag: false,
       label_method: lambda { |cat| render 'languages', cat: cat },
       label_html: {class: "px-0"},
-      input_html: {class: 'category-selector'},
+      input_html: {class: 'category-selector', "data-selection-target": "radioButton", "data-action": "click->selection#change"},
       item_wrapper_class: 'category-item col-4',
       collection_wrapper_tag: 'div',
       collection_wrapper_class: 'category-wrapper',
       collection: Qcm::LANGUAGES %>
   <div class="align-button-center">
-    <%= f.submit 'Select', class: "button create-button col-4 mb-3" %>
+    <%= f.submit 'Select', class: "button create-button col-4 mb-3", "data-selection-target": "selectButton", disabled: true %>
   </div>
 <% end %>
-
 <div>
   <img src="<%= asset_path('test-3.gif') %>" alt="Gif 3" class="gif-language">
 </div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const levelRadios = document.querySelectorAll('input[name="qcm[languages]"]');
-    const selectButton = document.querySelector('.create-button');
-
-    // Désactiver le bouton "Select" au chargement de la page
-    selectButton.disabled = true;
-
-    // Vérifier si un niveau est déjà sélectionné au chargement de la page
-    levelRadios.forEach(function(radio) {
-      if (radio.checked) {
-        selectButton.disabled = false;
-      }
-    });
-
-    // Ajouter un écouteur d'événement à chaque bouton radio de niveau
-    levelRadios.forEach(function(radio) {
-      radio.addEventListener('change', function() {
-        // Vérifier si un niveau est sélectionné
-        const selectedLevel = document.querySelector('input[name="qcm[languages]"]:checked');
-        if (selectedLevel) {
-          // Activer le bouton "Select" si un niveau est sélectionné
-          selectButton.disabled = false;
-        } else {
-          // Désactiver le bouton "Select" si aucun niveau n'est sélectionné
-          selectButton.disabled = true;
-        }
-      });
-    });
-  });
-</script>

@@ -67,6 +67,10 @@ height: calc(100vh - 56px);
   border-color: #fff;
 }
 
+.create-button:disabled, .join-button:disabled {
+  opacity: .5;
+}
+
 .nav-link {
   color: white;
 }
