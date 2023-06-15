@@ -13,3 +13,36 @@
     </div>
   <% end %>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const avatarRadios = document.querySelectorAll('input[name="user_game[avatar]"]');
+    const selectButton = document.querySelector('.create-button');
+
+    // Désactiver le bouton "Select" au chargement de la page
+    selectButton.disabled = true;
+
+    // Vérifier si un avatar est déjà sélectionné au chargement de la page
+    avatarRadios.forEach(function(radio) {
+      if (radio.checked) {
+        selectButton.disabled = false;
+      }
+    });
+
+    // Ajouter un écouteur d'événement à chaque bouton radio d'avatar
+    avatarRadios.forEach(function(radio) {
+      radio.addEventListener('change', function() {
+        // Vérifier si un avatar est sélectionné
+        const selectedAvatar = document.querySelector('input[name="user_game[avatar]"]:checked');
+        if (selectedAvatar) {
+          // Activer le bouton "Select" si un avatar est sélectionné
+          selectButton.disabled = false;
+        } else {
+          // Désactiver le bouton "Select" si aucun avatar n'est sélectionné
+          selectButton.disabled = true;
+        }
+      });
+    });
+  });
+</script>
+
