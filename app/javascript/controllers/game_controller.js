@@ -16,7 +16,9 @@ export default class extends Controller {
             window.location.href = window.location.href
           } else if (json.user_answered) {
             console.log("answer")
-            this.progressTarget.outerHTML = json.user_answered
+            if (this.hasProgressTarget) {
+              this.progressTarget.outerHTML = json.user_answered
+            }
           } else if (json.user_finished) {
             console.log("finished")
             if (this.hasResultTarget) {
@@ -28,5 +30,5 @@ export default class extends Controller {
     )
     console.log(`Subscribed to the waitingroom with the id ${this.gameIdValue}.`)
   }
- 
+
 }
