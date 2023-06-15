@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= favicon_link_tag %>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <title>UFCode</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
@@ -14,7 +16,7 @@
   </head>
 
   <body>
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('Background-UFCode.png') %>); height: 100vh; background-size: cover;">
+    <div class="banner" style="background-image: url(<%= asset_path('Background-UFCode.png') %>); height: 100vh; background-size: cover;">
       <div class="container">
         <%= render "shared/navbar" %>
         <%= render "shared/flashes" %>

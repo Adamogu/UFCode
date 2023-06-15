@@ -1,7 +1,9 @@
 .height-leaderboard {
   height: 70vh;
   overflow: hidden;
-  }
+  overflow: scroll;
+}
+
 
 #infinite-scroll-div {
   width: 50vw;
