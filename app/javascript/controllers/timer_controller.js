@@ -3,10 +3,10 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="timer"
 export default class extends Controller {
   connect() {
-    console.log('hello')
-    this.temps = 60
+    // console.log('hello')
+    this.temps = 0
     var gameStartAudio = document.getElementById('game-start-audio');
-    console.log(gameStartAudio)
+    // console.log(gameStartAudio)
     gameStartAudio.play();
     this.timerElement = document.getElementById("timer")
 
@@ -20,10 +20,10 @@ export default class extends Controller {
     minutes = minutes < 10 ? "0" + minutes : minutes
     secondes = secondes < 10 ? "0" + secondes : secondes
     if (this.timerElement) {
-      console.log(this.timerElement)
+      // console.log(this.timerElement)
       this.timerElement.innerText = `${minutes}:${secondes}`
-      this.temps = this.temps <= 0 ? 0 : this.temps - 1
-      console.log(this.temps)
+      this.temps = this.temps + 1
+      // console.log(this.temps)
       // Vérifier si toutes les questions ont été répondues
       const answeredQuestions = document.querySelectorAll("[data-action='click->swap#swap'].answered")
       const totalQuestions = document.querySelectorAll("[data-action='click->swap#swap']").length

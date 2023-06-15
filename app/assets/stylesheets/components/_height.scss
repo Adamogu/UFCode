@@ -1,8 +1,9 @@
 .height-leaderboard {
   height: 70vh;
-  overflow: hidden;
-  overflow: scroll;
+  overflow: auto;
+  scrollbar-width: thin;
 }
+
 
 
 #infinite-scroll-div {
